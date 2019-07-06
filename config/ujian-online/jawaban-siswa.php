@@ -20,7 +20,7 @@ class Jawaban_siswa extends Database{
 		
 	}
 
-	public function show_ujian_siswa($id_ujian_online, $posisi, $batas){
+	public function show_ujian_siswa($id_ujian_online, $batas, $posisi){
 		$con = $this->dbconnect();
 		$sql = 'SELECT * FROM ujian_online_detail WHERE id_ujian_online="'.$id_ujian_online.'" LIMIT $posisi, $batas';
 		$query = mysqli_query($con,$sql);
@@ -69,7 +69,7 @@ class Siswa extends Database{
 
 	public function show_siswa(){
 		$con = $this->dbconnect();
-		$sql = 'SELECT * FROM siswa';
+		$sql = 'SELECT * FROM t_siswa';
 		$query = mysqli_query($con,$sql);
 		return $query;
 	}

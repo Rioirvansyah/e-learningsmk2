@@ -29,10 +29,10 @@ $show = $obj->show_ujian();
                   <div class="col-md-12">
                     <div class="card">
                         <div class="card-footer">
-                          <button title="export data berupa excel" type="submit" class="btn btn-success btn-sm">
+                          <!-- <button title="export data berupa excel" type="submit" class="btn btn-success btn-sm">
                             <i class="fa ti-upload"></i> export
-                          </button>
-                          <a href="form-ujian-online.php"><button title="Tambahkan surat masuk" type="submit" class="btn btn-primary btn-sm"><i class="fa ti-"></i> Tambah Data Ujian
+                          </button> -->
+                          <a href="form-ujian-online.php"><button title="Tambahkan surat masuk" type="submit" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Tambah Data Ujian
                           </button> </a>
                         </div>
                         <div class="card-body">
@@ -66,8 +66,8 @@ $show = $obj->show_ujian();
                                                     );
                                 ?>
                                             <th><?php echo $no; ?></th>   
-                                            <th><?php echo $data["nama_kelas"]; ?></th>
-                                            <th><?php echo $data["nama_mapel"]; ?></th>
+                                            <th><?php echo $data["kelas"]; ?></th>
+                                            <th><?php echo $data["pelajaran"]; ?></th>
                                             <th><?php echo $data["jenis_ujian"]; ?></th>
                                             <th><?php echo $daylist[$date]; ?></th>
                                             <th><?php echo $data["jam_mulai"]; ?> - <?php echo $data["jam_selesai"]; ?></th>

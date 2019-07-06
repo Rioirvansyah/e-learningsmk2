@@ -32,10 +32,10 @@ $show = $obj->show_detail_ujian1($id_ujian_online);
                   <div class="col-md-12">
                     <div class="card">
                         <div class="card-footer">
-                          <button title="export data berupa excel" type="submit" class="btn btn-success btn-sm">
+                          <!-- <button title="export data berupa excel" type="submit" class="btn btn-success btn-sm">
                             <i class="fa ti-upload"></i> export
-                          </button>
-                          <a href='form-ujian-online1.php?id_ujian_online=<?php echo $id_ujian_online ?>'><button title="Tambahkan surat masuk" type="submit" class="btn btn-primary btn-sm"><i class="fa ti-"></i> Tambah Data Soal
+                          </button> -->
+                          <a href='form-ujian-online1.php?id_ujian_online=<?php echo $id_ujian_online ?>'><button title="Tambahkan surat masuk" type="submit" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Tambah Data Soal
                           </button> </a>
                         </div>
                         <div class="card-body">

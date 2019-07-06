@@ -51,11 +51,19 @@ $show2 = $obj_guru->show_guru();
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Pilih Jenis Ujian</label></div>
                             <div class="col-12 col-md-9">
-                                <select name="jenis_ujian" class="standardSelect" onchange="if (this.selectedIndex==3) {document.getElementById('tampilan_ulangan').style.display='inline'}else {document.getElementById('tampilan_ulangan').style.display='none'}">
-                                    <option value=""></option>
-                                    <option value="Ujian Akhir Semester">Ujian Akhir Semester</option>
-                                    <option value="Ujian Tengah Semester">Ujian Tengah Semester</option>
-                                    <option value="Ulangan">Ulangan</option>
+                                <select name="jenis_ujian" class="form-control" onchange="if (this.selectedIndex==3) {document.getElementById('tampilan_ulangan').style.display='inline'}else {document.getElementById('tampilan_ulangan').style.display='none'}">
+                                    <option value="Ujian Tengah Semester" 
+                                      <?php if($data3["jenis_ujian"] == "Ujian Tengah Semester") { 
+                                        echo "selected";
+                                      } ?> >Ujian Tengah Semester</option>
+                                    <option value="Ulangan"
+                                    <?php if($data3["jenis_ujian"] == "Ulangan") { 
+                                        echo "selected";
+                                      } ?> >Ulangan</option>
+                                    <option value="Tugas" 
+                                    <?php if($data3["jenis_ujian"] == "Tugas") { 
+                                        echo "selected";
+                                      } ?> >Tugas</option>
                                 </select>
                             </div>
                           </div>
@@ -68,11 +76,14 @@ $show2 = $obj_guru->show_guru();
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Guru</label></div>
                             <div class="col-12 col-md-9">
-                                <select name="nik" data-placeholder="" class="standardSelect" tabindex="1" >
-                                    <option value="" required></option>
+                                <select name="nik" data-placeholder="" class="form-control" tabindex="1" >
+                                    
                           <?php foreach ($show2 as $data2) {
                            ?>
-                                    <option value="<?php echo $data2["NIK"]; ?>"><?php echo $data2["Nama_guru"]; ?></option>
+                                    <option value="<?php echo $data2["nip"]; ?>" 
+                                      <?php if($data3["nip"] == $data2["nip"]) { 
+                                        echo "selected";
+                                      } ?> ><?php echo $data2["nama"]; ?></option>
                           <?php } ?>
                                 </select>
                             </div>
@@ -80,11 +91,12 @@ $show2 = $obj_guru->show_guru();
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Kelas</label></div>
                             <div class="col-12 col-md-9">
-                                <select name="id_kelas" data-placeholder="" class="standardSelect" required>
-                                    <option value=""></option>
+                                <select name="id_kelas" data-placeholder="" class="form-control" required>
                           <?php foreach ($show as $data) {
                            ?>
-                                    <option value="<?php echo $data["id_kelas"]; ?>"><?php echo $data["nama_kelas"]; ?></option>
+                                    <option value="<?php echo $data["id_kelas"]; ?>"  <?php if($data3["id_kelas"] == $data["id_kelas"]) { 
+                                        echo "selected";
+                                      } ?>><?php echo $data["kelas"]; ?></option>
                           <?php } ?>
                                 </select>
                             </div>
@@ -92,11 +104,13 @@ $show2 = $obj_guru->show_guru();
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Mata Pelajaran</label></div>
                             <div class="col-12 col-md-9">
-                                <select name="id_mapel" data-placeholder="" class="standardSelect" required>
+                                <select name="id_mapel" data-placeholder="" class="form-control" required>
                                     <option value=""></option>
                           <?php foreach ($show1 as $data1) {
                            ?>
-                                    <option value="<?php echo $data1["id_mapel"]; ?>"><?php echo $data1["nama_mapel"]; ?></option>
+                                    <option value="<?php echo $data1["idpel"]; ?>" <?php if($data3["idpel"] == $data1["idpel"]) { 
+                                        echo "selected";
+                                      } ?>><?php echo $data1["pelajaran"]; ?></option>
                           <?php } ?>
                                 </select>
                             </div>

@@ -1,8 +1,8 @@
 <?php 
 require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); 
 require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php"); 
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/e-learning/e-learning.php");
-$obj = new E_Learning();
+require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/elearning/elearning.php");
+$obj = new elearning();
 $obj_kelas = new Kelas();
 $obj_mapel = new Mata_pelajaran();
 $obj_guru = new Guru();
@@ -61,11 +61,14 @@ $show2 = $obj_guru->show_guru();
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Guru</label></div>
                             <div class="col-12 col-md-9">
-                                <select name="nik" value="" class="standardSelect" tabindex="1" >
-                                    <option value=""></option>
+                                <select name="nik" value="" class="form-control" >
                           <?php foreach ($show2 as $data2) {
                            ?>
-                                    <option value="<?php echo $data2["nik"]; ?>"><?php echo $data2["Nama_guru"]; ?></option>
+                                    <option value="<?php echo $data2["nip"]; ?>" 
+                                      <?php if($data3["nip"] == $data2["nip"]) { 
+                                        echo "selected";
+                                      } ?> >
+                                    <?php echo $data2["nama"]; ?></option>
                           <?php } ?>
                                 </select>
                             </div>
@@ -73,10 +76,13 @@ $show2 = $obj_guru->show_guru();
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Kelas</label></div>
                             <div class="col-12 col-md-9">
-                                <select name="id_kelas" class="standardSelect">
-                                    <option value=""></option>
+                                <select name="id_kelas" class="form-control">
                           <?php foreach ($show as $data) { ?>
-                                    <option value="<?php echo $data["id_kelas"]; ?>"><?php echo $data["nama_kelas"]; ?></option>
+                                    <option value="<?php echo $data["id_kelas"]; ?>" 
+                                      <?php if($data3["id_kelas"] == $data["id_kelas"]) { 
+                                        echo "selected";
+                                      } ?>
+                                      ><?php echo $data["kelas"]; ?></option>
                           <?php } ?>
                                 </select>
                             </div>
@@ -84,18 +90,21 @@ $show2 = $obj_guru->show_guru();
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Mata Pelajaran</label></div>
                             <div class="col-12 col-md-9">
-                                <select name="id_mapel" class="standardSelect" tabindex="1" >
-                                    <option value=""></option>
+                                <select name="id_mapel" class="form-control" >
                           <?php foreach ($show1 as $data1) {
                            ?>
-                                    <option value="<?php echo $data1["id_mapel"]; ?>"><?php echo $data1["nama_mapel"]; ?></option>
+                                    <option value="<?php echo $data1["idpel"]; ?>" 
+                                      <?php if($data3["idpel"] == $data1["idpel"]) { 
+                                        echo "selected";
+                                      } ?>
+                                      ><?php echo $data1["pelajaran"]; ?></option>
                           <?php } ?>
                                 </select>
                             </div>
                           </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="file-input" class=" form-control-label">File input</label></div>
-                            <div class="col-12 col-md-9"><input type="file" id="nama_file" name="nama_file" class="form-control-file" value="<?php echo $data3['nama_file'];?>"></div>
+                            <div class="col-12 col-md-9"><input type="file" id="nama_file" name="nama_file" class="form-control-file" value="" required=""><?php echo $data3['nama_file'];?></div>
                           </div>
                           <!-- <div class="row form-group">
                             <div class="col col-md-3"><label for="file-multiple-input" class=" form-control-label">Multiple File input</label></div>

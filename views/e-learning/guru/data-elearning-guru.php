@@ -3,7 +3,7 @@ require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php");
 require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php"); 
 require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/elearning2.php");
 $obj = new elearning2();
-$show = $obj->show_elearning_guru();
+$show = $obj->show_elearning_guru2();
 ?>
 
         <div class="breadcrumbs">
@@ -29,14 +29,14 @@ $show = $obj->show_elearning_guru();
                   <div class="col-md-12">
                     <div class="card">
                         <div class="card-footer">
-                          <a href="form-elearning.php"><button title="Tambahkan surat masuk" type="submit" class="btn btn-primary btn-sm"><i class="fa ti-"></i> Tambah Data Modul E-Learning
+                          <a href="form-elearning.php"><button title="Tambahkan surat masuk" type="submit" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Tambah Data Modul E-Learning
                           </button> </a>
                         </div>
                         <div class="card-body">
                               <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                 <thead>
                                   <tr>
-                                    <th>ID.</th>
+                                    <th>ID</th>
                                     <th>Judul</th>
                                     <th width="9%">Kelas</th>
                                     <th>Mata Pelajaran</th>
@@ -53,8 +53,8 @@ $show = $obj->show_elearning_guru();
                            ?>
                                             <th><?php echo $data['id_elearning']; ?></th>   
                                             <th><?php echo $data["judul"]; ?></th>
-                                            <th><?php echo $data["nama_kelas"]; ?></th>
-                                            <th><?php echo $data["nama_mapel"]; ?></th>
+                                            <th><?php echo $data["kelas"]; ?></th>
+                                            <th><?php echo $data["pelajaran"]; ?></th>
                                             <th><?php echo $data["nama_file"]; ?></th>
                                             <th><?php echo $data["tanggal_upload"]; ?></th>
                                             <th>
@@ -64,7 +64,6 @@ $show = $obj->show_elearning_guru();
                                         </tr>
                                         <?php
                                         $no++;  
-                                     
                                 }}
                                 ?>
                                  

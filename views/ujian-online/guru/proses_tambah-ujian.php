@@ -1,4 +1,5 @@
 <?php 
+require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php");
 require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/ujian-online/ujian-online.php");
 
     $aksi = $_GET['aksi'];

@@ -44,11 +44,11 @@ $show2 = $obj_guru->show_guru();
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Pilih Jenis Ujian</label></div>
                             <div class="col-12 col-md-9">
-                                <select name="jenis_ujian" class="standardSelect" tabindex="1" onchange="if (this.selectedIndex==3) {document.getElementById('tampilan_ulangan').style.display='inline'}else {document.getElementById('tampilan_ulangan').style.display='none'}">
+                                <select name="jenis_ujian" class="form-control" tabindex="1" onchange="if (this.selectedIndex==3) {document.getElementById('tampilan_ulangan').style.display='inline'}else {document.getElementById('tampilan_ulangan').style.display='none'}">
                                     <option value="">Pilih Jenis Ujian</option>
-                                    <option value="Ujian Akhir Semester">Ujian Akhir Semester</option>
                                     <option value="Ujian Tengah Semester">Ujian Tengah Semester</option>
                                     <option value="Ulangan">Ulangan</option>
+                                    <option value="Tugas">Tugas</option>
                                 </select>
                             </div>
                           </div>
@@ -61,11 +61,11 @@ $show2 = $obj_guru->show_guru();
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Guru</label></div>
                             <div class="col-12 col-md-9">
-                                <select name="nik" data-placeholder="Pilih Guru" class="standardSelect" tabindex="1" >
+                                <select name="nik" data-placeholder="Pilih Guru" class="form-control" tabindex="1" >
                                     <option value="">Pilih Guru</option>
                           <?php foreach ($show2 as $data2) {
                            ?>
-                                    <option value="<?php echo $data2["nik"]; ?>"><?php echo $data2["Nama_guru"]; ?></option>
+                                    <option value="<?php echo $data2["nip"]; ?>"><?php echo $data2["nama"]; ?></option>
                           <?php } ?>
                                 </select>
                             </div>
@@ -73,11 +73,11 @@ $show2 = $obj_guru->show_guru();
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Kelas</label></div>
                             <div class="col-12 col-md-9">
-                                <select name="id_kelas" data-placeholder="Pilih Kelas" class="standardSelect" tabindex="1" >
+                                <select name="id_kelas" data-placeholder="Pilih Kelas" class="form-control" tabindex="1" >
                                     <option value="">Pilih Kelas</option>
                           <?php foreach ($show as $data) {
                            ?>
-                                    <option value="<?php echo $data["id_kelas"]; ?>"><?php echo $data["nama_kelas"]; ?></option>
+                                    <option value="<?php echo $data["id_kelas"]; ?>"><?php echo $data["kelas"]; ?></option>
                           <?php } ?>
                                 </select>
                             </div>
@@ -85,11 +85,11 @@ $show2 = $obj_guru->show_guru();
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Mata Pelajaran</label></div>
                             <div class="col-12 col-md-9">
-                                <select name="id_mapel" data-placeholder="Pilih Mapel" class="standardSelect" tabindex="1" >
+                                <select name="id_mapel" data-placeholder="Pilih Mapel" class="form-control" tabindex="1" >
                                     <option value="">Pilih Mapel</option>
                           <?php foreach ($show1 as $data1) {
                            ?>
-                                    <option value="<?php echo $data1["id_mapel"]; ?>"><?php echo $data1["nama_mapel"]; ?></option>
+                                    <option value="<?php echo $data1["idpel"]; ?>"><?php echo $data1["pelajaran"]; ?></option>
                           <?php } ?>
                                 </select>
                             </div>

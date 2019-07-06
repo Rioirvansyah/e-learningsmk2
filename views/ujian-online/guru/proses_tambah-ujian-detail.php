@@ -1,4 +1,5 @@
 <?php 
+require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php");
 require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/ujian-online/ujian-online-detail.php");
  
     $aksi = $_GET['aksi'];
@@ -81,7 +82,7 @@ require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/ujian-online/ujian-online-d
       $edit = $obj->edit_ujian_detail($id_ujian_online_detail, $id_ujian_online,$no_soal, $soal, $jenis_soal, $gambar, $jawaban_a, $jawaban_b, $jawaban_c, $jawaban_d, $jawaban_e, $jawaban_benar, $poin_nilai);
 
       if ($edit == "Success") {
-        header('Location: http://localhost:8080/SISSMKN2/views/ujian-online/guru/data-ujian-guru.php?id_ujian_online='.$id_ujian_online.'');
+        header('Location: http://localhost:8080/SISSMKN2/views/ujian-online/guru/detail-ujian-online.php?id_ujian_online='.$id_ujian_online.'');
       }
       else{
         echo "Gagal";

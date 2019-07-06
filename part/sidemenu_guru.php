@@ -45,8 +45,10 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa ti-user"></i>E-Learning</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa ti-user"></i><a href="<?php echo $siteurl; ?>/views/e-learning/guru/data-elearning-guru.php">Data E-Learning</a></li>
-                            <li><i class="menu-icon fa ti-receipt"></i><a href="<?php echo $siteurl; ?>/views/ujian-online/guru/data-ujian-guru.php">Data Ujian Online</a></li>
+                            <li><i class="menu-icon fa fa-file-pdf-o"></i><a href="<?php echo $siteurl; ?>/views/e-learning/guru/data-elearning-guru.php">Upload Modul</a></li>
+                            <li><i class="menu-icon fa fa-file-text-o"></i><a href="<?php echo $siteurl; ?>/views/ujian-online/guru/data-ujian-guru.php">Data Ujian Online</a></li>
+                            <li><i class="menu-icon fa fa-file-text"></i><a href="<?php echo $siteurl; ?>/views/e-learning/guru/data-elearning-guru.php">Tambah Soal Ujian</a></li>
+                            <li><i class="menu-icon fa fa-check-square-o"></i><a href="<?php echo $siteurl; ?>/views/ujian-online/guru/data-ujian-guru.php">Koreksi Soal Ujian</a></li>
                         </ul>
                     </li>
                     <li>

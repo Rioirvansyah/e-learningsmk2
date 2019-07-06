@@ -40,18 +40,18 @@ $showmapel = $obj_mapel->show_mapel();
                           <div class="col col-md-1"><label for="selectSm" class=" form-control-label">Kelas</label></div>
                             <div class="col-3 col-md-2">
                               <select name="id_kelas" id="id_kelas" class="form-control-sm form-control">
-                                <option value="">All</option>
+                                <!-- <option value="">All</option> -->
                                 <?php foreach ($showkelas as $datakelas) { ?>
-                                <option value="<?php echo $datakelas['id_kelas']; ?>"><?php echo $datakelas['nama_kelas']; ?></option>
+                                <option value="<?php echo $datakelas['id_kelas']; ?>"><?php echo $datakelas['kelas']; ?></option>
                                 <?php } ?>
                               </select>
                             </div>
                           <div class="col col-md-1"><label for="selectSm" class=" form-control-label">Mata Pelajaran</label></div>
                             <div class="col-3 col-md-2">
                               <select name="id_mapel" id="id_mapel" class="form-control-sm form-control">
-                                <option value="">All</option>
+                                <!-- <option value="">All</option> -->
                                 <?php foreach ($showmapel as $datamapel) { ?>
-                                <option value="<?php echo $datamapel['id_mapel']; ?>"><?php echo $datamapel['nama_mapel'];?></option>
+                                <option value="<?php echo $datamapel['idpel']; ?>"><?php echo $datamapel['pelajaran'];?></option>
                                 <?php } ?>
                               </select>
                             </div>
@@ -74,7 +74,7 @@ $showmapel = $obj_mapel->show_mapel();
                     <a href="detail-elearning.php?id_elearning=<?php echo $data["id_elearning"]; ?>">
                     <div class="col-lg-3 col-md-6">
                         <div class="card">
-                            <img class="card-img-top" src="<?php echo $siteurl; ?>/images/placeholder.png" alt="Card image cap">
+                            <img class="card-img-top" src="<?php echo $siteurl; ?>/images/pdf.jpg" alt="Card image cap">
                             <div class="card-body" style="height: 150px;">
                                 <h4 class="card-title mb-1"><?php echo $data["judul"]; ?></h4>
                                 <p class="card-text"><?php echo $data["tanggal_upload"]; ?></p>

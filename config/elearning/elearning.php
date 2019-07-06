@@ -38,7 +38,7 @@ class elearning extends Database
 
 	public function show_detail_elearning($id_elearning){
 		$con = $this->dbconnect();
-		$sql = 'SELECT * FROM data_elearning as d JOIN mata_pelajaran as m ON d.id_mapel = m.id_mapel JOIN kelas as k ON d.id_kelas = k.id_kelas JOIN guru as p ON d.nik = p.nik WHERE id_elearning="'.$id_elearning.'"' or die(mysqli_error());
+		$sql = 'SELECT * FROM data_elearning as d JOIN t_pelajaran as m ON d.idpel = m.idpel JOIN t_kelas as k ON d.id_kelas = k.id_kelas JOIN t_staf as p ON d.nip = p.nip WHERE id_elearning="'.$id_elearning.'"' or die(mysqli_error());
 		$query = mysqli_query($con,$sql);
 		return $query;
 	}
@@ -85,7 +85,7 @@ class Kelas extends Database{
 
 	public function show_kelas(){
 		$con = $this->dbconnect();
-		$sql = "SELECT * FROM sh_kelas";
+		$sql = "SELECT * FROM t_kelas";
 		$query = mysqli_query($con,$sql);
 		return $query;
 	}
@@ -95,7 +95,7 @@ class Mata_pelajaran extends Database{
 
 	public function show_mapel(){
 		$con = $this->dbconnect();
-		$sql = "SELECT * FROM sh_mapel";
+		$sql = "SELECT * FROM t_pelajaran";
 		$query = mysqli_query($con,$sql);
 		return $query;
 	}

@@ -26,7 +26,7 @@ $id_ujian_online = $_GET['id_ujian_online'];
         </div>
 
         <?php
-        $konek = mysqli_connect("localhost","root","admin123","sekolah");
+        $konek = mysqli_connect("localhost","root","","webtempfix");
 
         $batas   = 1;
         $halaman = @$_GET['halaman'];
@@ -39,6 +39,7 @@ $id_ujian_online = $_GET['id_ujian_online'];
         }
         $show = $obj->show_ujian_siswa($id_ujian_online, $batas, $posisi);
         $query  = "SELECT * FROM ujian_online_detail WHERE id_ujian_online='".$id_ujian_online."' LIMIT $posisi,$batas";
+        
         $tampil = mysqli_query($konek, $query); 
         $no = $posisi+1;
         while ($data=mysqli_fetch_array($tampil)){ ?>
@@ -62,7 +63,7 @@ $id_ujian_online = $_GET['id_ujian_online'];
                                     <option value="">Pilih Siswa</option>
                           <?php foreach ($show2 as $data2) {
                            ?>
-                                    <option value="<?php echo $data2["nis"]; ?>"><?php echo $data2["namaSiswa"]; ?></option>
+                                    <option value="<?php echo $data2["no_induk"]; ?>"><?php echo $data2["nama"]; ?></option>
                           <?php } ?>
                                 </select>
                             </div>

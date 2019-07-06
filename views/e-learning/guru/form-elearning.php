@@ -51,9 +51,9 @@ $show2 = $obj_guru->show_guru();
                             <div class="col-12 col-md-9"><textarea name="deskripsi" id="deskripsi" rows="5" placeholder="Content..." class="form-control"></textarea></div>
                           </div>
                           <div class="row form-group">
-                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Guru</label></div>
+                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Guru</label></div>
                             <div class="col-12 col-md-9">
-                                <select name="nip" data-placeholder="Pilih Guru" class="standardSelect">
+                                <select name="nip" data-placeholder="Pilih Guru" class="form-control">
                                     <option value="">Pilih Guru</option>
                           <?php foreach ($show2 as $data2) {
                            ?>
@@ -65,11 +65,11 @@ $show2 = $obj_guru->show_guru();
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Kelas</label></div>
                             <div class="col-12 col-md-9">
-                                <select name="id_kelas" data-placeholder="Pilih Kelas" class="standardSelect" required="">
+                                <select name="id_kelas" data-placeholder="Pilih Kelas" class="form-control" required="">
                                     <option value="">Pilih Kelas</option>
                           <?php foreach ($show as $data) {
                            ?>
-                                    <option value="<?php echo $data["id_kelas"]; ?>"><?php echo $data["nama_kelas"]; ?></option>
+                                    <option value="<?php echo $data["id_kelas"]; ?>"><?php echo $data["kelas"]; ?></option>
                           <?php } ?>
                                 </select>
                             </div>
@@ -77,17 +77,17 @@ $show2 = $obj_guru->show_guru();
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Mata Pelajaran</label></div>
                             <div class="col-12 col-md-9">
-                                <select name="id_mapel" data-placeholder="Pilih Mapel" class="standardSelect" required="">
+                                <select name="id_mapel" data-placeholder="Pilih Mapel" class="form-control" required="">
                                     <option value="">Pilih Mapel</option>
                           <?php foreach ($show1 as $data1) {
                            ?>
-                                    <option value="<?php echo $data1["id_mapel"]; ?>"><?php echo $data1["nama_mapel"]; ?></option>
+                                    <option value="<?php echo $data1["idpel"]; ?>"><?php echo $data1["pelajaran"]; ?></option>
                           <?php } ?>
                                 </select>
                             </div>
                           </div>
                           <div class="row form-group">
-                            <div class="col col-md-3"><label for="file-input" class=" form-control-label">File input</label></div>
+                            <div class="col col-md-3"><label for="file-input" class="form-control-label">File input</label></div>
                             <div class="col-12 col-md-9"><input type="file" id="nama_file" name="nama_file" class="form-control-file" required=""></div>
                           </div>
                           <!-- <div class="row form-group">

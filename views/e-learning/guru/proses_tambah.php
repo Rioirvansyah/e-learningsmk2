@@ -1,6 +1,6 @@
 <?php 
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/elearning2.php");
 require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php");
+require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/elearning2.php");
 $siteurl = 'http://localhost:8080/sissmkn2';
 
     $aksi = $_GET['aksi'];
@@ -21,9 +21,9 @@ $siteurl = 'http://localhost:8080/sissmkn2';
       $file_tmp = $_FILES['nama_file']['tmp_name'];
       $id_mapel = $_POST['id_mapel'];
       $id_kelas = $_POST['id_kelas'];
-      $nik = $_POST['nik'];
+      $nip = $_POST['nip'];
 
-      $obj = new E_learning();
+      $obj = new elearning2();
 
       if (!in_array($extensi, $file_type)) {
         $error = true;
@@ -39,12 +39,12 @@ $siteurl = 'http://localhost:8080/sissmkn2';
       }
       else{
         if (move_uploaded_file($_FILES['nama_file']['tmp_name'], $folder.$nama_file)) {
-          $add = $obj->add_elearning($id_elearning, $judul, $deskripsi, $nama_file, $tanggal_upload, $id_mapel, $id_kelas, $nik);
+          $add = $obj->add_elearning($id_elearning, $judul, $deskripsi, $nama_file, $tanggal_upload, $id_mapel, $id_kelas, $nip);
         }
       }
 
       if ($add == "Success") {
-        header('Location: http://localhost:8080/sissmkn2/views/e-learning/siswa/data-elearning.php');
+        header('Location: http://localhost:8080/sissmkn2/views/e-learning/guru/data-elearning-guru.php');
       }
       else{
         echo "Gagal";
@@ -72,7 +72,7 @@ $siteurl = 'http://localhost:8080/sissmkn2';
       $id_kelas = $_POST['id_kelas'];
       $nik = $_POST['nik'];
 
-      $obj = new E_learning();
+      $obj = new elearning2();
 
       if (!in_array($extensi, $file_type)) {
         $error = true;
@@ -88,13 +88,12 @@ $siteurl = 'http://localhost:8080/sissmkn2';
       }
       else{
         if (move_uploaded_file($_FILES['nama_file']['tmp_name'], $folder.$nama_file)) {
-      $edit = $obj->edit_elearning($id_elearning, $judul, $deskripsi, $nama_file, $tanggal_upload, $id_mapel, $id_kelas, $nik);
-
-      }
+          $edit = $obj->edit_elearning($id_elearning, $judul, $deskripsi, $nama_file, $tanggal_upload, $id_mapel, $id_kelas, $nik);
+        }
       }
 
       if ($edit == "Success") {
-        header('Location: http://localhost:8080/sissmkn2/views/e-learning/siswa/data-elearning.php');
+        header('Location: http://localhost:8080/sissmkn2/views/e-learning/guru/data-elearning-guru.php');
       }
       else{
         echo "Gagal";
@@ -104,7 +103,7 @@ $siteurl = 'http://localhost:8080/sissmkn2';
     }
     elseif($aksi == "hapus"){
       $id_elearning = $_GET['id_elearning'];
-      $obj = new E_learning();
+      $obj = new elearning2();
       $del = $obj->delete_elearning($id_elearning);
 
        if ($del == "Success") {

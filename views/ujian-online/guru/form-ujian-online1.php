@@ -50,7 +50,7 @@ foreach ($show as $data) {
                           <div class="row form-group">
                             <div class="col col-md-2"><label for="text-input" class=" form-control-label">Pilih Jenis Soal</label></div>
                             <div class="col-12 col-md-10">
-                                <select name="jenis_soal" class="standardSelect" tabindex="1" onchange="if (this.selectedIndex==1) {document.getElementById('tampil_jenis_soal').style.display='inline'}else {document.getElementById('tampil_jenis_soal').style.display='none'}">
+                                <select name="jenis_soal" class="form-control" tabindex="1" onchange="if (this.selectedIndex==1) {document.getElementById('tampil_jenis_soal').style.display='inline'}else {document.getElementById('tampil_jenis_soal').style.display='none'}">
                                     <option value="Essay">Pilih Jenis Soal</option>
                                     <option value="Pilihan Ganda">Pilihan Ganda</option>
                                     <option value="Essay">Essay</option>
@@ -62,7 +62,9 @@ foreach ($show as $data) {
                             <div class="col-12 col-md-10"><textarea name="soal" id="soal" rows="5" placeholder="Content..." class="form-control"></textarea></div>
                           </div>
                           <div class="row form-group">
-                            <div class="col col-md-3" align="right"><label for="file-input" class=" form-control-label">Gambar</label></div>
+                            <div class="col col-md-2">
+                              <label for="file-input" class=" form-control-label">Gambar</label>
+                            </div>
                             <div class="col-12 col-md-9"><input type="file" id="gambar" name="gambar" value="" class="form-control-file"></div>
                           </div>
                           <span id="tampil_jenis_soal" style="display:none;">

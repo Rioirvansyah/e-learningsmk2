@@ -22,13 +22,13 @@ class Ujian_online extends Database{
 
 	function show_ujian(){
 		$con = $this->dbconnect();
-		$sql = 'SELECT *FROM ujian_online as u JOIN kelas as k ON u.id_kelas = k.id_kelas JOIN mata_pelajaran as m ON u.id_mapel = m.id_mapel';
+		$sql = 'SELECT *FROM ujian_online as u JOIN t_kelas as k ON u.id_kelas = k.id_kelas JOIN t_pelajaran as m ON u.idpel = m.idpel';
 		$query = mysqli_query($con,$sql);
 		return $query;
 	}
 	function show_ujian_waktu(){
 		$con = $this->dbconnect();
-		$sql = 'SELECT *FROM ujian_online as u JOIN kelas as k ON u.id_kelas = k.id_kelas JOIN mata_pelajaran as m ON u.id_mapel = m.id_mapel WHERE date_format(tgl_ujian, "%Y-%m-%d")=CURDATE()';
+		$sql = 'SELECT *FROM ujian_online as u JOIN t_kelas as k ON u.id_kelas = k.id_kelas JOIN t_pelajaran as m ON u.idpel = m.idpel WHERE date_format(tgl_ujian, "%Y-%m-%d")=CURDATE()';
 		$query = mysqli_query($con,$sql);
 		return $query;
 		}
@@ -42,14 +42,14 @@ class Ujian_online extends Database{
 
 	function show_detail_ujian($id_ujian_online){
 		$con = $this->dbconnect();
-		$sql = 'SELECT * FROM ujian_online as u JOIN kelas as k ON u.id_kelas = k.id_kelas JOIN mata_pelajaran as m ON u.id_mapel = m.id_mapel JOIN guru as pe ON u.nik = pe.nik WHERE id_ujian_online="'.$id_ujian_online.'"' or die(mysqli_error());
+		$sql = 'SELECT * FROM ujian_online as u JOIN t_kelas as k ON u.id_kelas = k.id_kelas JOIN t_pelajaran as m ON u.idpel = m.idpel JOIN t_staf as pe ON u.nip = pe.nip WHERE id_ujian_online="'.$id_ujian_online.'"' or die(mysqli_error());
 		$query = mysqli_query($con,$sql);
 		return $query;
 	}
 
 	function add_ujian($id_ujian_online, $id_kelas, $id_mapel, $nik, $jenis_ujian, $jam_mulai, $jam_selesai, $bab, $tgl_ujian, $waktu, $tgl_upload){
 		$con = $this->dbconnect();
-		$sql = 'INSERT INTO ujian_online(id_ujian_online, id_kelas, id_mapel, nik, jenis_ujian, jam_mulai, jam_selesai, bab, tgl_ujian, waktu, tgl_upload) VALUES("'.$id_ujian_online.'","'.$id_kelas.'","'.$id_mapel.'","'.$nik.'","'.$jenis_ujian.'","'.$jam_mulai.'","'.$jam_selesai.'","'.$bab.'","'.$tgl_ujian.'","'.$waktu.'","'.$tgl_upload.'")';
+		$sql = 'INSERT INTO ujian_online(id_ujian_online, id_kelas, idpel, nip, jenis_ujian, jam_mulai, jam_selesai, bab, tgl_ujian, waktu, tgl_upload) VALUES("'.$id_ujian_online.'","'.$id_kelas.'","'.$id_mapel.'","'.$nik.'","'.$jenis_ujian.'","'.$jam_mulai.'","'.$jam_selesai.'","'.$bab.'","'.$tgl_ujian.'","'.$waktu.'","'.$tgl_upload.'")';
 		$query = mysqli_query($con,$sql);
         if (!$query) {
 			return "Failed";
@@ -61,7 +61,7 @@ class Ujian_online extends Database{
 
 	function edit_ujian($id_ujian_online, $id_kelas, $id_mapel, $nik, $jam_mulai, $jam_selesai, $jenis_ujian, $bab, $tgl_ujian, $waktu, $tgl_upload){
 		$con = $this->dbconnect();
-		$sql = 'UPDATE ujian_online SET id_kelas="'.$id_kelas.'", id_mapel="'.$id_mapel.'", nik="'.$nik.'", jam_mulai="'.$jam_mulai.'", jam_selesai="'.$jam_selesai.'", jenis_ujian="'.$jenis_ujian.'", bab="'.$bab.'", tgl_ujian="'.$tgl_ujian.'", waktu="'.$waktu.'", tgl_upload="'.$tgl_upload.'" WHERE id_ujian_online="'.$id_ujian_online.'"';
+		$sql = 'UPDATE ujian_online SET id_kelas="'.$id_kelas.'", idpel="'.$id_mapel.'", nip="'.$nik.'", jam_mulai="'.$jam_mulai.'", jam_selesai="'.$jam_selesai.'", jenis_ujian="'.$jenis_ujian.'", bab="'.$bab.'", tgl_ujian="'.$tgl_ujian.'", waktu="'.$waktu.'", tgl_upload="'.$tgl_upload.'" WHERE id_ujian_online="'.$id_ujian_online.'"';
 		$query = mysqli_query($con,$sql);
 
 		if (!$query) {
@@ -90,7 +90,7 @@ class Guru extends Database{
 
 	public function show_guru(){
 		$con = $this->dbconnect();
-		$sql = "SELECT * FROM guru";
+		$sql = "SELECT * FROM t_staf";
 		$query = mysqli_query($con,$sql);
 		return $query;
 	}
@@ -100,7 +100,7 @@ class Kelas extends Database{
 
 	public function show_kelas(){
 		$con = $this->dbconnect();
-		$sql = "SELECT * FROM kelas";
+		$sql = "SELECT * FROM t_kelas";
 		$query = mysqli_query($con,$sql);
 		return $query;
 	}
@@ -110,7 +110,7 @@ class Mata_pelajaran extends Database{
 
 	public function show_mapel(){
 		$con = $this->dbconnect();
-		$sql = "SELECT * FROM mata_pelajaran";
+		$sql = "SELECT * FROM t_pelajaran";
 		$query = mysqli_query($con,$sql);
 		return $query;
 	}

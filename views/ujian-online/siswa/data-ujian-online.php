@@ -47,11 +47,11 @@ $show = $obj->show_ujian_waktu();
                             <table>
                                 <tr>
                                     <td>Kelas</td>
-                                    <td>: <?php echo $data['nama_kelas']; ?></td>
+                                    <td>: <?php echo $data['kelas']; ?></td>
                                 </tr>
                                 <tr>
                                     <td>Mata Pelajaran</td>
-                                    <td>: <?php echo $data['nama_mapel']; ?></td>
+                                    <td>: <?php echo $data['pelajaran']; ?></td>
                                 </tr>
                                 <tr>
                                     <td width="200px">Hari/Tanggal </td>
@@ -120,11 +120,11 @@ $show = $obj->show_ujian_waktu();
                             <table>
                                 <tr>
                                     <td>Kelas</td>
-                                    <td>: <?php echo $data1['nama_kelas']; ?></td>
+                                    <td>: <?php echo $data1['kelas']; ?></td>
                                 </tr>
                                 <tr>
                                     <td>Mata Pelajaran</td>
-                                    <td>: <?php echo $data1['nama_mapel']; ?></td>
+                                    <td>: <?php echo $data1['pelajaran']; ?></td>
                                 </tr>
                                 <tr>
                                     <td width="200px">Hari/Tanggal </td>

@@ -5,7 +5,7 @@ class Database {
 	var $host = "localhost";
 	var $username = "root";
 	var $pass = "";
-	var $db = "smk2";
+	var $db = "webtempfix";
 
 	function dbconnect()
 	{

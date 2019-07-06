@@ -14,8 +14,8 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa ti-user"></i>E-Learning</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa ti-user"></i><a href="<?php echo $siteurl; ?>/views/e-learning/siswa/data-elearning.php">File E-Learning</a></li>
-                            <li><i class="menu-icon fa ti-receipt"></i><a href="<?php echo $siteurl; ?>/views/ujian-online/siswa/data-ujian-online.php">Ujian Online</a></li>
+                            <li><i class="menu-icon fa fa-file-pdf-o"></i><a href="<?php echo $siteurl; ?>/views/e-learning/siswa/data-elearning.php">Download Modul</a></li>
+                            <li><i class="menu-icon fa fa-file-text-o"></i><a href="<?php echo $siteurl; ?>/views/ujian-online/siswa/data-ujian-online.php">Ujian Online</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">

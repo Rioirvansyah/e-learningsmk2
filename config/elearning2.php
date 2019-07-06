@@ -27,10 +27,18 @@ class elearning2 extends Database
 
 	public function show_elearning($id_kelas, $id_mapel){
 		$con = $this->dbconnect();
-		$sql = 'SELECT * FROM data_elearning as d JOIN mata_pelajaran as m ON d.id_mapel = m.id_mapel JOIN kelas as k ON d.id_kelas = k.id_kelas WHERE d.id_mapel="'.$id_mapel.'" OR d.id_kelas="'.$id_kelas.'" ';
+		$sql = 'SELECT * FROM data_elearning as d JOIN t_pelajaran as m ON d.idpel = m.idpel JOIN t_kelas as k ON d.id_kelas = k.id_kelas WHERE d.idpel="'.$id_mapel.'" or d.id_kelas="'.$id_kelas.'" ';
 		$query = mysqli_query($con,$sql);
 		return $query; 
 	}
+
+	public function show_elearning_guru2(){
+		$con = $this->dbconnect();
+		$sql = 'SELECT * FROM data_elearning as d JOIN t_pelajaran as m ON d.idpel = m.idpel JOIN t_kelas as k ON d.id_kelas = k.id_kelas' or die(mysqli_error());
+		$query = mysqli_query($con,$sql);
+		return $query;
+	}
+
 
 	public function show_elearning_guru(){
 		$con = $this->dbconnect();
@@ -48,7 +56,7 @@ class elearning2 extends Database
 
 	public function add_elearning($id_elearning, $judul, $deskripsi, $nama_file, $tanggal_upload, $id_mapel, $id_kelas, $nip){
 		$con = $this->dbconnect();
-	  	$sql = 'INSERT INTO data_elearning(id_elearning, judul, deskripsi, nama_file, tanggal_upload, id_mapel, id_kelas, nip) VALUES ("'.$id_elearning.'","'.$judul.'","'.$deskripsi.'","'.$nama_file.'","'.$tanggal_upload.'","'.$id_mapel.'","'.$id_kelas.'","'.$nip.'")';
+	  	$sql = 'INSERT INTO data_elearning(id_elearning, judul, deskripsi, nama_file, tanggal_upload, idpel, id_kelas, nip) VALUES ("'.$id_elearning.'","'.$judul.'","'.$deskripsi.'","'.$nama_file.'","'.$tanggal_upload.'","'.$id_mapel.'","'.$id_kelas.'","'.$nip.'")';
         $query = mysqli_query($con,$sql);
         if (!$query) {
 			return "Failed";
@@ -60,7 +68,7 @@ class elearning2 extends Database
 
 	public function edit_elearning($id_elearning, $judul, $deskripsi, $nama_file, $tanggal_upload, $id_mapel, $id_kelas, $nik){
 		$con = $this->dbconnect();
-		$sql = 'UPDATE data_elearning SET judul="'.$judul.'", deskripsi="'.$deskripsi.'", nama_file="'.$nama_file.'", tanggal_upload="'.$tanggal_upload.'", id_mapel="'.$id_mapel.'", id_kelas="'.$id_kelas.'", nik="'.$nik.'" WHERE id_elearning="'.$id_elearning.'"';
+		$sql = 'UPDATE data_elearning SET judul="'.$judul.'", deskripsi="'.$deskripsi.'", nama_file="'.$nama_file.'", tanggal_upload="'.$tanggal_upload.'", idpel="'.$id_mapel.'", id_kelas="'.$id_kelas.'", nip="'.$nik.'" WHERE id_elearning="'.$id_elearning.'"';
 		$query = mysqli_query($con,$sql);
 		if (!$query) {
 			return "Failed";
@@ -88,7 +96,7 @@ class Kelas extends Database{
 
 	public function show_kelas(){
 		$con = $this->dbconnect();
-		$sql = "SELECT * FROM sh_kelas";
+		$sql = "SELECT * FROM t_kelas";
 		$query = mysqli_query($con,$sql);
 		return $query;
 	}
@@ -98,7 +106,7 @@ class Mata_pelajaran extends Database{
 
 	public function show_mapel(){
 		$con = $this->dbconnect();
-		$sql = "SELECT * FROM sh_mapel";
+		$sql = "SELECT * FROM t_pelajaran";
 		$query = mysqli_query($con,$sql);
 		return $query;
 	}

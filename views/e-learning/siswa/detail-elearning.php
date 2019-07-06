@@ -1,8 +1,8 @@
 <?php 
 require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); 
 require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php"); 
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/e-learning/e-learning.php");
-$obj = new E_learning();
+require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/elearning/elearning.php");
+$obj = new elearning();
 $id_elearning = $_GET['id_elearning'];
 $show = $obj->show_detail_elearning($id_elearning);
 ?>
