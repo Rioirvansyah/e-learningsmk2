@@ -2,9 +2,9 @@
 error_reporting(E_ALL && ~E_NOTICE);
 ini_set('display_errors', 1);
 session_start();
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Kesiswaan.php");
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Guru.php");
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Log.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Kesiswaan.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Guru.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Log.php");
 
 
 

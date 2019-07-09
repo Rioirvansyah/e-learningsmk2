@@ -1,13 +1,13 @@
-  <?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); ?>
-  <?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php"); ?>
-  <?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Guru.php"); ?>
-  <?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/detailkelas.php"); ?>
-  <?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Mapel.php"); ?>
-  <?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Ruangan.php"); ?>
-  <?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Hari.php"); ?>
-  <?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Kelas.php"); ?>
-  <?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Programahli.php"); ?>
-  <?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/jadwaladmin.php"); ?>
+  <?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php"); ?>
+  <?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php"); ?>
+  <?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Guru.php"); ?>
+  <?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/detailkelas.php"); ?>
+  <?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Mapel.php"); ?>
+  <?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Ruangan.php"); ?>
+  <?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Hari.php"); ?>
+  <?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Kelas.php"); ?>
+  <?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Programahli.php"); ?>
+  <?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/jadwaladmin.php"); ?>
 
        <!-- Header-->
 <?php

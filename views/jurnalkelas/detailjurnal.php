@@ -1,7 +1,7 @@
 <?php
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php");
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php");
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/jurnal.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/jurnal.php");
 
 $jurnal = new jurnal();
 $detailjurnal = $jurnal->tampildetail($_GET['id_jurnal']);
@@ -19,7 +19,7 @@ $detailjurnal = $jurnal->tampildetail($_GET['id_jurnal']);
             <div class="page-header float-right">
                 <div class="page-title">
                     <ol class="breadcrumb text-right">
-                        <li><a href="/sissmkn2/views/jurnalkelas/jurnalkelas.php">Jurnal Harian Kelas</a></li>
+                        <li><a href="/SISSMKN2/views/jurnalkelas/jurnalkelas.php">Jurnal Harian Kelas</a></li>
                         <li class="active">Detail Jurnal Harian Kelas</li>
                     </ol>
                 </div>

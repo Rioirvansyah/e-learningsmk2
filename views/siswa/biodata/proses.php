@@ -2,10 +2,10 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1); ?>
 
-<?php $siteurl = 'http://localhost:8080/sissmkn2'; ?>
+<?php $siteurl = 'http://localhost:8080/SISSMKN2'; ?>
 
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php"); ?>
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Kesiswaan.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Kesiswaan.php"); ?>
 <?php $db = new Kesiswaan(); ?>
 <?php
 $aksi = $_GET['aksi'];
@@ -127,7 +127,7 @@ $aksi = $_GET['aksi'];
         );
     // print_r($_POST['tinggalDgn']);
     //     die();
-    header("location:http://localhost:8080/sissmkn2/views/kesiswaan/biodata/index.php");
+    header("location:http://localhost:8080/SISSMKN2/views/kesiswaan/biodata/index.php");
      
  }elseif ($aksi == "tambah") {
     $db->tambahdu(
@@ -269,7 +269,7 @@ $aksi = $_GET['aksi'];
         $_POST['tglSKHUNSMP'],
         '2'
         );
-    header("location:http://localhost:8080/sissmkn2/views/kesiswaan/biodata/index.php");
+    header("location:http://localhost:8080/SISSMKN2/views/kesiswaan/biodata/index.php");
  }elseif ($aksi == "hapus") {
     $db->deletePO($_GET['po_id']);
     header("location:http://localhost/ta_cendana_javiera/views/produksi/production_order/index.php");

@@ -1,6 +1,6 @@
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); ?>
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php"); ?>
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Guru.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Guru.php"); ?>
 
 <?php
 $object = new t_staf();
@@ -114,4 +114,4 @@ $(document).ready(function() {
 
     <!-- Right Panel -->
 
- <?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/footer.php"); ?>
+ <?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/footer.php"); ?>

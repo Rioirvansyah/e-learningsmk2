@@ -1,12 +1,12 @@
  <!doctype html>
-<html class="no-js" lang="">
+<html lang="">
 <?php 
 error_reporting(E_ALL && ~E_NOTICE);
 ini_set('display_errors', 1);
-$siteurl = 'http://localhost:8080/sissmkn2';
+$siteurl = 'http://localhost:8080/SISSMKN2';
 session_start();
 if($_SESSION['status'] != "login"){
-    header("location:http://localhost:8080/sissmkn2/views/login/login/index.php");
+    header("location:http://localhost:8080/SISSMKN2/views/login/login/index.php");
 }
 
 ?>
@@ -32,7 +32,8 @@ if($_SESSION['status'] != "login"){
     <link rel="stylesheet" href="<?php echo $siteurl; ?>/assets/css/lib/chosen/chosen.min.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-    <script src="<?php echo $siteurl; ?>/assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    
 
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
     <script>
@@ -144,11 +145,11 @@ if($_SESSION['status'] != "login"){
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <?php
                 if ($_SESSION['menu'] == "admin") {
-                include ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/sidemenu_admin.php");
+                include ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/sidemenu_admin.php");
                 }elseif ($_SESSION['menu'] == "siswa") {
-                include ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/sidemenu_siswa.php");
+                include ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/sidemenu_siswa.php");
                 }if ($_SESSION['menu'] == "guru") {
-                include ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/sidemenu_guru.php");
+                include ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/sidemenu_guru.php");
                 }
                 ?>
 
@@ -183,11 +184,11 @@ if($_SESSION['status'] != "login"){
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?php 
                             if ($_SESSION['menu'] == "admin") {
-                                echo '<img class="user-avatar rounded-circle" src="http://localhost:8080/sissmkn2/images/admin.png" alt="User Avatar">';
+                                echo '<img class="user-avatar rounded-circle" src="http://localhost:8080/SISSMKN2/images/admin.png" alt="User Avatar">';
                             }elseif ($_SESSION['menu'] == "guru") {
-                                echo '<img class="user-avatar rounded-circle" src="http://localhost:8080/sissmkn2/images/guru.jpg" alt="User Avatar">';
+                                echo '<img class="user-avatar rounded-circle" src="http://localhost:8080/SISSMKN2/images/guru.jpg" alt="User Avatar">';
                             }else {
-                                echo '<img class="user-avatar rounded-circle" src="http://localhost:8080/sissmkn2/images/siswa.jpg" alt="User Avatar">';
+                                echo '<img class="user-avatar rounded-circle" src="http://localhost:8080/SISSMKN2/images/siswa.jpg" alt="User Avatar">';
                             }
                             ?>
                         </a>

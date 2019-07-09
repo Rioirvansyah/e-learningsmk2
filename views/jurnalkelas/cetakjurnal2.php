@@ -1,7 +1,7 @@
 <?php
-$siteurl = 'http://localhost:8080/sissmkn2';
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php");
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/jurnal.php");
+$siteurl = 'http://localhost:8080/SISSMKN2';
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/jurnal.php");
 
 $jurnal = new jurnal();
 $cetak = $jurnal->cetakjurnalperkelas2($_GET['kelas'], $_GET['tgl']);
@@ -17,7 +17,7 @@ $content = '<!DOCTYPE html>
 <table style="width: 100%; text-align: center; font-size: 14px;">
   <tr>
     <td style="width: 7%" rowspan="4">
-      <img src="C:\xampp\htdocs\sissmkn2\images\logo_smk2.png" alt="Logo" width="80" height="78">
+      <img src="C:\xampp\htdocs\SISSMKN2\images\logo_smk2.png" alt="Logo" width="80" height="78">
     </td>
     <td style="width: 93%">
       Jurnal Harian Kelas 

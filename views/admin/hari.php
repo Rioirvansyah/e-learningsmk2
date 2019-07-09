@@ -1,6 +1,6 @@
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); ?>
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php"); ?>
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Hari.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Hari.php"); ?>
 <?php
 $object = new Hari();
 ?> 
@@ -131,4 +131,4 @@ $object = new Hari();
 //            angka 3000 dibawah ini artinya pesan akan hilang dalam 3 detik setelah muncul
             setTimeout(function(){$(".pesan").fadeOut('slow');}, 6000);
         </script>
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/footer.php"); ?>    
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/footer.php"); ?>    

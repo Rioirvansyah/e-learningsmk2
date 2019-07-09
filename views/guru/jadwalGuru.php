@@ -1,9 +1,9 @@
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/assets/header/header.php"); ?>
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php"); ?>
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Guru.php"); ?>
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Ruangan.php"); ?>
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Kelas.php"); ?>
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Mapel.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/assets/header/header.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Guru.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Ruangan.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Kelas.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Mapel.php"); ?>
 
 <?php
 $object1 = new Guru();
@@ -100,6 +100,6 @@ $object4 = new Mapel();
     </div><!-- /#right-panel -->
 
     <!-- Right Panel -->
-    <?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/assets/footer/footer.php"); ?>
+    <?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/assets/footer/footer.php"); ?>
 
   

@@ -1,6 +1,6 @@
-<?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); ?>
-<?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php"); ?>
-<?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/alumni.php"); ?>
+<?php require($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php"); ?>
+<?php require($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php"); ?>
+<?php require($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/alumni.php"); ?>
 <?php
 $object = new alumni();
 ?>
@@ -106,4 +106,4 @@ $object = new alumni();
 
     <!-- Right Panel -->
 
-<?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/footer.php"); ?>  
+<?php require($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/footer.php"); ?>  

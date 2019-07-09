@@ -1,7 +1,7 @@
 <?php 
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); 
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php"); 
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/elearning/elearning.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php"); 
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php"); 
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/elearning/elearning.php");
 $obj = new elearning();
 $obj_kelas = new Kelas();
 $obj_mapel = new Mata_pelajaran();

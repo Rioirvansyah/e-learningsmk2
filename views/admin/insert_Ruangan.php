@@ -1,4 +1,4 @@
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php"); ?>
         <!-- Header-->
 
         <div class="breadcrumbs">

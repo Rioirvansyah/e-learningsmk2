@@ -1,7 +1,7 @@
 <?php 
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); 
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php");
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/jurnal.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php"); 
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/jurnal.php");
 
 $jurnal = new jurnal();
 
@@ -118,4 +118,4 @@ $(document).ready(function() {
 </script>
 
     <!-- Right Panel -->
- <?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/footer.php"); ?>
+ <?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/footer.php"); ?>

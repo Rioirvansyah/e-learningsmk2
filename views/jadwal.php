@@ -1,6 +1,6 @@
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/headerjadwal.php"); ?>
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php"); ?>
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Jadwal.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/headerjadwal.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Jadwal.php"); ?>
 <?php
 $object = new Jadwal();
 ?>
@@ -148,4 +148,4 @@ $object = new Jadwal();
         } );
     </script>
 
- <?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/footer.php"); ?> 
+ <?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/footer.php"); ?> 

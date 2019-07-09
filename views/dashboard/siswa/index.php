@@ -41,16 +41,16 @@ require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php");
                                                 <div class="weather-category twt-category">
                                                     <ul>
                                                         <li class="active">
-                                                            <h5><?php echo $_SESSION['namaSiswa'];?></h5>
+                                                            <h5><?php echo $_SESSION['nama'];?></h5>
                                                             Nama Siswa
                                                         </li>
                                                         <li>
-                                                            <h5><?php echo $_SESSION['nis'];?></h5>
+                                                            <h5><?php echo $_SESSION['no_induk'];?></h5>
                                                             Nomor Induk Siswa
                                                         </li>
                                                         <li>
-                                                            <h5><?php echo $_SESSION['psCode'];?></h5>
-                                                            Jurusan
+                                                            <h5><?php echo $_SESSION['username'];?></h5>
+                                                            username
                                                         </li>
                                                     </ul>
                                                 </div>

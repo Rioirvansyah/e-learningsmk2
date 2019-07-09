@@ -1,15 +1,15 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-$siteurl = 'http://localhost:8080/sissmkn2';
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php");
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/tbl_pendaftaran_prakerin.php");
+$siteurl = 'http://localhost:8080/SISSMKN2';
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/tbl_pendaftaran_prakerin.php");
 $tbl_perusahaan = new t_prakerin_siswa();
 ?>
 
 
 
-<?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); ?>
+<?php require($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php"); ?>
 
         <div class="breadcrumbs">
             <div class="col-sm-4">
@@ -177,4 +177,4 @@ $tbl_perusahaan = new t_prakerin_siswa();
 
     <!-- Right Panel -->
 
-<?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/footer.php"); ?>  
+<?php require($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/footer.php"); ?>  

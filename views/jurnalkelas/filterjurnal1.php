@@ -1,5 +1,5 @@
 <?php
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php");
 ?>
 
         <div class="breadcrumbs">
@@ -107,4 +107,4 @@ require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php");
 
     <!-- Right Panel -->
 
- <?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/footer.php"); ?>
+ <?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/footer.php"); ?>

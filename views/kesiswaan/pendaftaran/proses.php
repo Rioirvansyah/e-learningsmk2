@@ -2,10 +2,10 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1); ?>
 
-<?php $siteurl = 'http://localhost:8080/sissmkn2'; ?>
+<?php $siteurl = 'http://localhost:8080/SISSMKN2'; ?>
 
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php"); ?>
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Kesiswaan.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Kesiswaan.php"); ?>
 <?php $db = new Kesiswaan(); ?>
 <?php
 $aksi = $_GET['aksi'];
@@ -155,7 +155,7 @@ if($aksi == 'tambah') {
    move_uploaded_file($_FILES['foto_daftar']['tmp_name'], "ffoto/".$_FILES['foto_daftar']['name']);
     move_uploaded_file($_FILES['sis_nisn']['tmp_name'], "fnisn/".$_FILES['sis_nisn']['name']);
     
-    header("location:http://localhost:8080/sissmkn2/views/kesiswaan/pendaftaran/index.php");   
+    header("location:http://localhost:8080/SISSMKN2/views/kesiswaan/pendaftaran/index.php");   
 
 
  }elseif($aksi == 'edit') {
@@ -296,10 +296,10 @@ if($aksi == 'tambah') {
  0,
  0);
     
-    header("location:http://localhost:8080/sissmkn2/views/kesiswaan/pendaftaran/index.php");   
+    header("location:http://localhost:8080/SISSMKN2/views/kesiswaan/pendaftaran/index.php");   
 
   }elseif ($aksi == 'hapus') {
      $db->hapuspendaftaran($_GET['user_id']);
-    header("location:http://localhost:8080/sissmkn2/views/kesiswaan/pendaftaran/index.php");
+    header("location:http://localhost:8080/SISSMKN2/views/kesiswaan/pendaftaran/index.php");
 }
 ?>

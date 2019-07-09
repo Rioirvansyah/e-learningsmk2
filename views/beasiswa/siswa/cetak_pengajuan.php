@@ -1,9 +1,9 @@
 <?php  
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-$siteurl = 'http://localhost:8080/sissmkn2';
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php");
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Beasiswa.php");
+$siteurl = 'http://localhost:8080/SISSMKN2';
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Beasiswa.php");
 $db = new Beasiswa();
 ?>
 <html>

@@ -6,7 +6,7 @@ $password = md5($_POST['password']);
 
 
 $sql = "select user.username, user.password, user.email, user.nip, user.no_induk, user.menu,
-t_siswa.nama, t_siswa.no_induk, 
+t_siswa.nama, user.no_induk, 
 t_staf.nip, t_staf.email, user_level.menu from user
  
 LEFT JOIN t_siswa on t_siswa.no_induk = user.no_induk
@@ -28,12 +28,12 @@ if($cek > 0){
 	$_SESSION['status'] = "login";
 
 	if($_SESSION['menu'] == "admin") {
-		header("location:http://localhost:8080/sissmkn2/views/dashboard/admin/index.php");
+		header("location:http://localhost:8080/SISSMKN2/views/dashboard/admin/index.php");
 	}else if($_SESSION['menu'] == "guru") {
-		header("location:http://localhost:8080/sissmkn2/views/dashboard/guru/index.php");
+		header("location:http://localhost:8080/SISSMKN2/views/dashboard/guru/index.php");
 	
 	}else if($_SESSION['menu'] == "siswa") {
-		header("location:http://localhost:8080/sissmkn2/views/dashboard/siswa/index.php");
+		header("location:http://localhost:8080/SISSMKN2/views/dashboard/siswa/index.php");
 	}
 }else{
 		echo "<script>alert('Username atau Password salah!');</script>";

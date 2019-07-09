@@ -1,6 +1,6 @@
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); ?>
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php"); ?>
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Siswa.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Siswa.php"); ?>
 <?php
 
 $object = new Siswa();
@@ -154,4 +154,4 @@ $object = new Siswa();
 
     </script>
 
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/footer.php"); ?> 
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/footer.php"); ?> 

@@ -40,6 +40,21 @@ class Ujian_online extends Database{
 		return $query;
 	}
 
+	function show_status_ujian_siswa($id_ujian){
+		session_start();
+		$no_induk = $_SESSION['no_induk'];
+		$con = $this->dbconnect();
+		$sql = "SELECT * FROM nilai_ujian where id_ujian_online = '".$id_ujian."' and no_induk = '".$no_induk."' ";
+		$query = mysqli_query($con,$sql);
+		$cek = mysqli_num_rows($query);
+		if($cek > 0){
+			return "sudah";
+		}else{
+			return "belum";
+		}
+		
+	}
+
 	function show_detail_ujian($id_ujian_online){
 		$con = $this->dbconnect();
 		$sql = 'SELECT * FROM ujian_online as u JOIN t_kelas as k ON u.id_kelas = k.id_kelas JOIN t_pelajaran as m ON u.idpel = m.idpel JOIN t_staf as pe ON u.nip = pe.nip WHERE id_ujian_online="'.$id_ujian_online.'"' or die(mysqli_error());
@@ -49,7 +64,7 @@ class Ujian_online extends Database{
 
 	function add_ujian($id_ujian_online, $id_kelas, $id_mapel, $nik, $jenis_ujian, $jam_mulai, $jam_selesai, $bab, $tgl_ujian, $waktu, $tgl_upload){
 		$con = $this->dbconnect();
-		$sql = 'INSERT INTO ujian_online(id_ujian_online, id_kelas, idpel, nip, jenis_ujian, jam_mulai, jam_selesai, bab, tgl_ujian, waktu, tgl_upload) VALUES("'.$id_ujian_online.'","'.$id_kelas.'","'.$id_mapel.'","'.$nik.'","'.$jenis_ujian.'","'.$jam_mulai.'","'.$jam_selesai.'","'.$bab.'","'.$tgl_ujian.'","'.$waktu.'","'.$tgl_upload.'")';
+		$sql = 'INSERT INTO ujian_online(id_ujian_online, id_kelas, idpel, nip, jenis_ujian, jam_mulai, jam_selesai, bab, tgl_ujian, waktu, tgl_upload, status_ujian) VALUES("'.$id_ujian_online.'","'.$id_kelas.'","'.$id_mapel.'","'.$nik.'","'.$jenis_ujian.'","'.$jam_mulai.'","'.$jam_selesai.'","'.$bab.'","'.$tgl_ujian.'","'.$waktu.'","'.$tgl_upload.'","tidak")';
 		$query = mysqli_query($con,$sql);
         if (!$query) {
 			return "Failed";
@@ -84,6 +99,63 @@ class Ujian_online extends Database{
 		}
 	}
 
+	function aktif_ujian($id_ujian_online){
+		$con = $this->dbconnect();
+		$sql = 'UPDATE ujian_online SET status_ujian = "aktif" WHERE id_ujian_online = "'.$id_ujian_online.'"';
+		$query = mysqli_query($con,$sql);
+		if (!$query) {
+			return mysqli_error($con);
+		}
+		else{
+			return "Success";
+		}
+	}
+
+	function nonaktif_ujian($id_ujian_online){
+		$con = $this->dbconnect();
+		$sql = 'UPDATE ujian_online set status_ujian = "tidak" where id_ujian_online = "'.$id_ujian_online.'"';
+		$query = mysqli_query($con,$sql);
+		if (!$query) {
+			return mysqli_error($con);
+		}
+		else{
+			return "Success";
+		}
+	}
+
+	function getJawabanSiswa($id_ujian,$no_induk){
+		$con = $this->dbconnect();
+		$query = "select * from jawaban_siswa as j inner join ujian_online_detail as uj on j.id_ujian_online_detail = uj.id_ujian_online_detail where j.id_ujian_online = '".$id_ujian."' and j.no_induk = '".$no_induk."'";
+		$q = mysqli_query($con,$query);
+		if(!$q){
+			return mysqli_error($con);
+		}else{
+			return $q;
+		}
+	}
+
+	function getNilai($id_ujian_online,$noinduk){
+		$con = $this->dbconnect();
+		$query = "select * from nilai_ujian as n where n.id_ujian_online = '".$id_ujian_online."' and n.no_induk = '".$noinduk."'";
+		$q = mysqli_query($con,$query);
+		if(!$q){
+			return mysqli_error($con);
+		}else{
+			return $q;
+		}
+	}
+
+	function show_siswa_mengerjakan($id_ujian_online){
+		$con = $this->dbconnect();
+		$query = "select * from jawaban_siswa as j inner join t_siswa as s on j.no_induk = s.no_induk where id_ujian_online = '".$id_ujian_online."' group by j.no_induk";
+		$q = mysqli_query($con,$query);
+		if(!$q){
+			return mysqli_error($con);
+		}else{
+			return $q;
+		}
+	}
+
 }
 
 class Guru extends Database{	
@@ -115,5 +187,7 @@ class Mata_pelajaran extends Database{
 		return $query;
 	}
 }
+
+
 
 ?>

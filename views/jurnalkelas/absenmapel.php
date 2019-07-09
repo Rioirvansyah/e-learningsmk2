@@ -1,7 +1,7 @@
 <?php
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php");
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php");
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/absensimapel.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/absensimapel.php");
 
 //function memanggil kelas absenkelas
 $absenmapel = new absensimapel();
@@ -36,7 +36,7 @@ $absenmapel = new absensimapel();
                             <i class="fa ti-upload"></i> Cetak Absensi
                           </button>
                           </a>-->
-                          <a href="/sissmkn2/views/jurnalkelas/index2.php"><button title="Tambah Jurnal Harian Kelas" type="submit" class="btn btn-primary btn-sm"><i class="fa ti-import"></i> Tambah Absensi
+                          <a href="/SISSMKN2/views/jurnalkelas/index2.php"><button title="Tambah Jurnal Harian Kelas" type="submit" class="btn btn-primary btn-sm"><i class="fa ti-import"></i> Tambah Absensi
                           </button> </a>
                           <a href="#"><button title="Filter Jurnal Harian Kelas" type="submit" class="btn btn-danger btn-sm"><i class="fa ti-export"></i> Filter Absensi
                           </button></a>
@@ -120,4 +120,4 @@ $(document).ready(function() {
 
     <!-- Right Panel -->
 
- <?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/footer.php"); ?>
+ <?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/footer.php"); ?>

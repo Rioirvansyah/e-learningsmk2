@@ -1,7 +1,7 @@
 <?php 
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); 
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php"); 
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/elearning/elearning.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php"); 
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php"); 
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/elearning/elearning.php");
 $obj = new elearning();
 $id_elearning = $_GET['id_elearning'];
 $show = $obj->show_detail_elearning($id_elearning);
@@ -35,7 +35,7 @@ $show = $obj->show_detail_elearning($id_elearning);
                         foreach ($show as $data) {
                           ?>
                       <div class="card-footer" align="right">
-                          <a href="<?php echo "http://localhost:8080/sissmkn2/file/".$data['nama_file']; ?>"> <button title="download data berupa file" type="submit" class="btn btn-success btn-sm">
+                          <a href="<?php echo "http://localhost:8080/SISSMKN2/file/".$data['nama_file']; ?>"> <button title="download data berupa file" type="submit" class="btn btn-success btn-sm">
                             <i class="fa ti-import"></i> Download
                           </button></a>
                         </div>
@@ -59,5 +59,5 @@ $show = $obj->show_detail_elearning($id_elearning);
                       </div>
                   </div>
               </div>
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/footer.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/footer.php"); ?>
 

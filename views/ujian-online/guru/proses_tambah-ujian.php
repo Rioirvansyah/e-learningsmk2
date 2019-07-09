@@ -1,5 +1,5 @@
 <?php 
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php");
 require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/ujian-online/ujian-online.php");
 
     $aksi = $_GET['aksi'];
@@ -65,6 +65,29 @@ require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/ujian-online/ujian-online.p
       }
       else{
         echo "Gagal";
+      }
+    }
+    else if($aksi == "aktif"){
+      $id_ujian_online = $_GET['id_ujian_online'];
+      $obj = new Ujian_online();
+      $aktif = $obj->aktif_ujian($id_ujian_online);
+
+       if ($aktif == "Success") {
+        header('Location: http://localhost:8080/SISSMKN2/views/ujian-online/guru/data-ujian-guru.php');
+      }
+      else{
+        echo $aktif;
+      }
+    }else if($aksi == "nonaktif"){
+      $id_ujian_online = $_GET['id_ujian_online'];
+      $obj = new Ujian_online();
+      $nonaktif = $obj->nonaktif_ujian($id_ujian_online);
+
+       if ($nonaktif == "Success") {
+        header('Location: http://localhost:8080/SISSMKN2/views/ujian-online/guru/data-ujian-guru.php');
+      }
+      else{
+        echo $nonaktif;
       }
     }
     ?>

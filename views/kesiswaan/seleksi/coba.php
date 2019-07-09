@@ -1,5 +1,5 @@
 
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/phpmailer/PHPMailerAutoload.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/phpmailer/PHPMailerAutoload.php"); ?>
 <?php
 
 $message = "TES";

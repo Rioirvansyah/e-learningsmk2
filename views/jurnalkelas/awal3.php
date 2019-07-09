@@ -2,9 +2,9 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-$siteurl = 'http://localhost/sissmkn2';
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php");
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/jurnal.php");
+$siteurl = 'http://localhost/SISSMKN2';
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/jurnal.php");
 
 //memanggil class jurnal
 $jurnal = new jurnal();
@@ -13,7 +13,7 @@ $jurnal = new jurnal();
 $panggil = $jurnal->cetakjurnalperkelas();
 ?>
 
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php"); ?>
 
         <div class="breadcrumbs">
             <div class="col-sm-4">
@@ -100,4 +100,4 @@ $panggil = $jurnal->cetakjurnalperkelas();
 
     <!-- Right Panel -->
 
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/footer.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/footer.php"); ?>

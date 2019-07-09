@@ -11,7 +11,7 @@
 	<table style="width: 100%; text-align: center; font-size: 14px;">
 	<tr>
 		<td style="width: 7%" rowspan="4">
-			<img src="C:\xampp\htdocs\sissmkn2\images\logo_smk2.png" alt="Logo" width="80" height="78">
+			<img src="C:\xampp\htdocs\SISSMKN2\images\logo_smk2.png" alt="Logo" width="80" height="78">
 		</td>
 		<td style="width: 93%">
 			PERMOHONAN BEASISWA

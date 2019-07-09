@@ -1,4 +1,4 @@
-<?php $siteurl="http://localhost:8080/sissmkn2";
+<?php $siteurl="http://localhost:8080/SISSMKN2";
 ?>
 <!doctype html>
 <head>

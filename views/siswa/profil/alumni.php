@@ -1,14 +1,14 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-$siteurl = 'http://localhost:8080/sissmkn2';
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php");
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Login.php");
+$siteurl = 'http://localhost:8080/SISSMKN2';
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Login.php");
 // print_r($_SESSION['alamat']);
 // die();
 ?>
 
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php"); ?>
 
         <div class="breadcrumbs">
             <div class="col-sm-4">
@@ -95,4 +95,4 @@ require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Login.php");
                     </div>
 
 
-    <?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/footer.php"); ?>  
+    <?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/footer.php"); ?>  

@@ -1,7 +1,7 @@
 <?php
 
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/fpdf/fpdf.php");
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/phpmailer/PHPMailerAutoload.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/fpdf/fpdf.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/phpmailer/PHPMailerAutoload.php");
 
 $pdf=new FPDF('P','cm','Legal');
 

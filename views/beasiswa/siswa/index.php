@@ -1,17 +1,17 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-$siteurl = 'http://localhost:8080/sissmkn2';
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php");
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Beasiswa.php");
+$siteurl = 'http://localhost:8080/SISSMKN2';
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Beasiswa.php");
 $db = new Pengajuan();
 ?>
 
 <?php 
 if($_SESSION['level'] != "admin"){
-    header("location:http://localhost:8080/sissmkn2/views/beasiswa/siswa/index_siswa.php");
+    header("location:http://localhost:8080/SISSMKN2/views/beasiswa/siswa/index_siswa.php");
 }
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); ?>
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php"); ?>
 
         <div class="breadcrumbs">
             <div class="col-sm-4">
@@ -551,4 +551,4 @@ require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); ?>
 //            angka 3000 dibawah ini artinya pesan akan hilang dalam 3 detik setelah muncul
             setTimeout(function(){$(".pesan").fadeOut('slow');}, 6000);
         </script>
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/footer.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/footer.php"); ?>

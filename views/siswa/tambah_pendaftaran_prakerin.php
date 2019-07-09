@@ -1,10 +1,10 @@
-<?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); ?>
-<?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php"); ?>
-<?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/tbl_pendaftaran_prakerin.php"); ?>
+<?php require($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php"); ?>
+<?php require($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php"); ?>
+<?php require($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/tbl_pendaftaran_prakerin.php"); ?>
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-$siteurl = 'http://localhost:8080/sissmkn2';
+$siteurl = 'http://localhost:8080/SISSMKN2';
 
 $tbl_pendaftaran_prakerin = new tbl_pendaftaran_prakerin();
 ?>
@@ -96,4 +96,4 @@ $tbl_pendaftaran_prakerin = new tbl_pendaftaran_prakerin();
     <!-- Right Panel -->
 
 
-<?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/footer.php"); ?>   
+<?php require($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/footer.php"); ?>   

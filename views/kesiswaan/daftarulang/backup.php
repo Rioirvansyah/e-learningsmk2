@@ -2,16 +2,16 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1); ?>
 
-<?php $siteurl = 'http://localhost:8080/sissmkn2'; ?>
+<?php $siteurl = 'http://localhost:8080/SISSMKN2'; ?>
 
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php"); ?>
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Kesiswaan.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Kesiswaan.php"); ?>
 <?php $db = new Kesiswaan(); ?>
 <?php
 $aksi = $_GET['aksi'];
  if($aksi == "edit"){
 	$db->editpendataan($_POST['idPendataan'],$_POST['nisn'],$_POST['nama'],$_POST['asalSekolah'],$_POST['jk'],$_POST['alamat'],$_POST['tempatLahir'],$_POST['tglLahir'],$_POST['pekerjaan'],$_POST['jurusan'],$_POST['thnAjaran']);
- 	header("location:http://localhost:8080/sissmkn2/views/kesiswaan/pendataan/index.php");
+ 	header("location:http://localhost:8080/SISSMKN2/views/kesiswaan/pendataan/index.php");
 	 
  }elseif ($aksi == "tambah") {
     $db->tambahdu(
@@ -143,7 +143,7 @@ $aksi = $_GET['aksi'];
     	$_POST['tglIjazahSMP'],
     	$_POST['tglSKHUNSMP']
     	);
- 	header("location:http://localhost:8080/sissmkn2/views/kesiswaan/pendataan/index.php");
+ 	header("location:http://localhost:8080/SISSMKN2/views/kesiswaan/pendataan/index.php");
  }elseif ($aksi == "hapus") {
     $db->deletePO($_GET['po_id']);
  	header("location:http://localhost/ta_cendana_javiera/views/produksi/production_order/index.php");
@@ -154,15 +154,15 @@ $aksi = $_GET['aksi'];
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-$siteurl = 'http://localhost:8080/sissmkn2';
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php");
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Kesiswaan.php");
+$siteurl = 'http://localhost:8080/SISSMKN2';
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Kesiswaan.php");
 $kesiswaan = new Kesiswaan();
 ?>
 
 
 
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php"); ?>
 
 <style>
 
@@ -806,7 +806,7 @@ button:hover {
                     </div>
 
 
-    <?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/footer.php"); ?>  
+    <?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/footer.php"); ?>  
 
 <script>
 var currentTab = 0; // Current tab is set to be the first tab (0)

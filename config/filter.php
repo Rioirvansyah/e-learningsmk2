@@ -4,7 +4,7 @@ $keyword = $_REQUEST['keyword']; // Ambil data keyword yang dikirim dengan AJAX
 
 // Load view.php
 ob_start();
-include "sissmkn2/config/cobacoba.php";
+include "SISSMKN2/config/cobacoba.php";
 $html = ob_get_contents(); // Masukan isi dari view.php ke dalam variabel $html
 ob_end_clean();
 

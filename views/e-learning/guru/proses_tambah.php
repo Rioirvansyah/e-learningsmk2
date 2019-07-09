@@ -1,7 +1,7 @@
 <?php 
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php");
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/elearning2.php");
-$siteurl = 'http://localhost:8080/sissmkn2';
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/elearning2.php");
+$siteurl = 'http://localhost:8080/SISSMKN2';
 
     $aksi = $_GET['aksi'];
     if($aksi == "tambah"){
@@ -44,7 +44,7 @@ $siteurl = 'http://localhost:8080/sissmkn2';
       }
 
       if ($add == "Success") {
-        header('Location: http://localhost:8080/sissmkn2/views/e-learning/guru/data-elearning-guru.php');
+        header('Location: http://localhost:8080/SISSMKN2/views/e-learning/guru/data-elearning-guru.php');
       }
       else{
         echo "Gagal";
@@ -93,7 +93,7 @@ $siteurl = 'http://localhost:8080/sissmkn2';
       }
 
       if ($edit == "Success") {
-        header('Location: http://localhost:8080/sissmkn2/views/e-learning/guru/data-elearning-guru.php');
+        header('Location: http://localhost:8080/SISSMKN2/views/e-learning/guru/data-elearning-guru.php');
       }
       else{
         echo "Gagal";
@@ -107,7 +107,7 @@ $siteurl = 'http://localhost:8080/sissmkn2';
       $del = $obj->delete_elearning($id_elearning);
 
        if ($del == "Success") {
-        header('Location: http://localhost:8080/sissmkn2/views/e-learning/guru/data-elearning-guru.php');
+        header('Location: http://localhost:8080/SISSMKN2/views/e-learning/guru/data-elearning-guru.php');
       }
       else{
         echo "Gagal Hapus";

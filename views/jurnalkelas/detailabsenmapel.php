@@ -1,7 +1,7 @@
 <?php 
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php");
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php");
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/absensimapel.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/absensimapel.php");
 
 $abskelas = new absensimapel();
 $detailabskelas = $abskelas->detailabsenmapel($_GET['idabsenmapel']);
@@ -19,7 +19,7 @@ $detailabskelas = $abskelas->detailabsenmapel($_GET['idabsenmapel']);
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="/sissmkn2/views/jurnalkelas/absenmapel.php">Absensi per Mata Pelajaran</a></li>
+                            <li><a href="/SISSMKN2/views/jurnalkelas/absenmapel.php">Absensi per Mata Pelajaran</a></li>
                             <li class="active">Detail Absensi Kelas</li>
                         </ol>
                     </div>
@@ -202,4 +202,4 @@ $detailabskelas = $abskelas->detailabsenmapel($_GET['idabsenmapel']);
         	</div>
         </div>
 
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/footer.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/footer.php"); ?>

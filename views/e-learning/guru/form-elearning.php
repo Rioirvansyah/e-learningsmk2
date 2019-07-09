@@ -1,7 +1,7 @@
 <?php 
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); 
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php"); 
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/elearning2.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php"); 
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php"); 
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/elearning2.php");
 $obj = new elearning2();
 $obj_kelas = new Kelas();
 $obj_mapel = new Mata_pelajaran();
@@ -110,6 +110,6 @@ $show2 = $obj_guru->show_guru();
 
 
 
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/footer.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/footer.php"); ?>
 
    

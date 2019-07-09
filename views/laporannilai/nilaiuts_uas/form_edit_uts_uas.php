@@ -2,12 +2,12 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 $siteurl = 'http://localhost:8080/sissmkn';
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php");
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/nilaiharian.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php");
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/nilaiharian.php");
 $penilaian = new nilaiharian();
 ?>
 
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php"); ?>
         <!-- Header-->
 
         <div class="breadcrumbs">
@@ -148,4 +148,4 @@ $penilaian = new nilaiharian();
     </div><!-- /#right-panel -->
 
     <!-- Right Panel -->
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/footer.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/footer.php"); ?>

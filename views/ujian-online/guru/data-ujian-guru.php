@@ -47,6 +47,7 @@ $show = $obj->show_ujian();
                                     <th>Jam</th>
                                     <th>Tanggal Ujian</th>
                                     <th>Tanggal Upload</th>
+                                    <th>Status Ujian</th>
                                     <th width="26%"></th>
                                   </tr>
                                 </thead>
@@ -73,10 +74,19 @@ $show = $obj->show_ujian();
                                             <th><?php echo $data["jam_mulai"]; ?> - <?php echo $data["jam_selesai"]; ?></th>
                                             <th><?php echo $data["tgl_ujian"]; ?></th>
                                             <th><?php echo $data["tgl_upload"]; ?></th>
+                                            <th><?php echo $data["status_ujian"]; ?></th>
                                             <th>
                                             <a href="detail-ujian-online.php?id_ujian_online=<?php echo $data["id_ujian_online"]; ?>"><button type="" class="btn btn-success btn-sm"><i class="fa fa-info"></i> Detail</button></a>
                                             <a href="edit-ujian-online.php?id_ujian_online=<?php echo $data["id_ujian_online"]; ?>"><button type="" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i> Edit</button></a>
+                                            <?php 
+                                              if($data["status_ujian"]=="aktif"){ ?>
+                                               <a href="proses_tambah-ujian.php?id_ujian_online=<?php echo $data["id_ujian_online"]; ?>&aksi=nonaktif"><button type="" class="btn btn-danger btn-sm"><i class="fa fa-pencil"></i> Non Aktif</button></a>
+                                              <?php }else{ ?>
+                                                <a href="proses_tambah-ujian.php?id_ujian_online=<?php echo $data["id_ujian_online"]; ?>&aksi=aktif"><button type="" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i> Aktif</button></a>
+                                             <?php }
+                                            ?>
                                             <a href="proses_tambah-ujian.php?id_ujian_online=<?php echo $data["id_ujian_online"]; ?>&aksi=hapus" onclick="return confirm(\'Yakin?\')"><button type="" class="btn btn-danger btn-sm"><i class="fa fa-trash "></i> Delete</button></a></th>
+                                            
                                         </tr>
                                         <?php
                                         $no++;  

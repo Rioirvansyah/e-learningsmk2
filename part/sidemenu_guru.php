@@ -48,7 +48,7 @@
                             <li><i class="menu-icon fa fa-file-pdf-o"></i><a href="<?php echo $siteurl; ?>/views/e-learning/guru/data-elearning-guru.php">Upload Modul</a></li>
                             <li><i class="menu-icon fa fa-file-text-o"></i><a href="<?php echo $siteurl; ?>/views/ujian-online/guru/data-ujian-guru.php">Data Ujian Online</a></li>
                             <li><i class="menu-icon fa fa-file-text"></i><a href="<?php echo $siteurl; ?>/views/e-learning/guru/data-elearning-guru.php">Tambah Soal Ujian</a></li>
-                            <li><i class="menu-icon fa fa-check-square-o"></i><a href="<?php echo $siteurl; ?>/views/ujian-online/guru/data-ujian-guru.php">Koreksi Soal Ujian</a></li>
+                            <li><i class="menu-icon fa fa-check-square-o"></i><a href="<?php echo $siteurl; ?>/views/ujian-online/guru/data-koreksi.php">Koreksi Soal Ujian</a></li>
                         </ul>
                     </li>
                     <li>

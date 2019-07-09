@@ -5,7 +5,12 @@ require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/ujian-online/ujian-online.p
 $obj = new Ujian_online();
 $show1 = $obj->show_ujian();
 $show = $obj->show_ujian_waktu();
+if(isset($_SESSION["ujian"])){ ?>
+    <script>alert('Ujian Sedang Berlangsung');
+    window.location="http://localhost:8080/SISSMKN2/views/ujian-online/siswa/data-ujian-online1.php?id_ujian_online=<?= $_SESSION["ujian"] ?>"</script>
+<?php }
 ?>
+
 
         <div class="breadcrumbs">
             <div class="col-sm-4">
@@ -68,6 +73,7 @@ $show = $obj->show_ujian_waktu();
                         <div class="card-header">
                             <strong class="card-title">PETUNJUK UMUM</strong>
                         </div>
+                        <input type="hidden" id="waktu<?= $data['id_ujian_online'];?>" value="<?= $data["waktu"]; ?>">
                         <div class="card-body">
                             <table>
                                 <tr>
@@ -80,11 +86,21 @@ $show = $obj->show_ujian_waktu();
                                 </tr>
                             </table>
                         </div>
+
+                        <?php 
+                        $cek = $obj->show_status_ujian_siswa($data['id_ujian_online']);
+                        if($cek=="belum"){
+                             if($data["status_ujian"]=="aktif"){ ?>
                             <div class="card-footer" align="right">
-                                <a href="data-ujian-online1.php?id_ujian_online=<?php echo $data["id_ujian_online"]; ?>"> <button type="submit" class="btn btn-primary btn-sm" id="tambah" name="tambah">
+                                <a onclick="mulaiSesiUjian(event,'<?= $data['id_ujian_online'];?>')"> <button type="submit" class="btn btn-primary btn-sm" id="tambah" name="tambah">
                                   <i class="fa fa-dot-circle-o"></i> Next
                                 </button></a>
                             </div>
+                        <?php }}else{
+                            echo "<div class='card-footer' align='right'>";
+                            echo "<h4>Anda Sudah Melakukan Ujian </h4>";
+                            echo "</div>";
+                        } ?>
                      </div>
                   </div>
                 </div>
@@ -102,7 +118,7 @@ $show = $obj->show_ujian_waktu();
                              'Friday' => 'Jumat',
                              'Saturday' => 'Sabtu' 
                             );
-       if ($data1['tgl_ujian'] != date("Y-m-d")) { ?>
+       if ($data1['tgl_ujian'] > date("Y-m-d")) { ?>
             <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
@@ -137,6 +153,26 @@ $show = $obj->show_ujian_waktu();
                             </table>
                         </div>
                     </div>
-
+S
         <?php } } ?>
 <?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/footer.php"); ?>
+<script>
+mulaiSesiUjian=(e,id_ujian_online)=>{
+    e.preventDefault();
+    var waktu = $("#waktu"+id_ujian_online).val();
+    var dt = new Date();
+         dt.setMinutes( dt.getMinutes() + parseInt(waktu));
+var date = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+dt.getDate();
+var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+var dateTime = date+' '+time;
+    $.ajax({
+        url:"http://localhost:8080/SISSMKN2/config/setSesi.php?sesi="+dateTime+"&id="+id_ujian_online,
+        type:"get",
+        success:function(response){
+            console.log(response);
+            window.location.href="data-ujian-online1.php?id_ujian_online="+id_ujian_online;
+             
+        }
+    })
+}
+</script>

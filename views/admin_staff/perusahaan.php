@@ -1,6 +1,6 @@
-<?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); ?>
-<?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php"); ?>
-<?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/tbl_perusahaan.php"); ?>
+<?php require($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php"); ?>
+<?php require($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php"); ?>
+<?php require($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/tbl_perusahaan.php"); ?>
 <?php
 $object = new t_prakerin();
 ?>
@@ -115,4 +115,4 @@ $(document).ready(function() {
 
     <!-- Right Panel -->
 
- <?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/footer.php"); ?>
+ <?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/footer.php"); ?>

@@ -2,12 +2,12 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1); ?>
 
-<?php $siteurl = 'http://localhost:8080/sissmkn2'; ?>
+<?php $siteurl = 'http://localhost:8080/SISSMKN2'; ?>
 
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php"); ?>
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Kesiswaan.php"); ?>
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/phpmailer/PHPMailerAutoload.php"); 
-require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/fpdf/fpdf.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Kesiswaan.php"); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/phpmailer/PHPMailerAutoload.php"); 
+require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/fpdf/fpdf.php"); ?>
 <?php $db = new Kesiswaan(); ?>
 <?php
 $aksi = $_GET['aksi'];
@@ -131,7 +131,7 @@ $aksi = $_GET['aksi'];
         );
     // print_r($_POST['tinggalDgn']);
     //     die();
- 	header("location:http://localhost:8080/sissmkn2/views/kesiswaan/biodata/index.php");
+ 	header("location:http://localhost:8080/SISSMKN2/views/kesiswaan/biodata/index.php");
 	 
  }elseif ($aksi == "tambah") {
     $db->tambahdu(
@@ -261,7 +261,7 @@ $aksi = $_GET['aksi'];
     	$_POST['tglSKHUNSMP'],
         '2'
     	);
- 	header("location:http://localhost:8080/sissmkn2/views/siswa/biodata/index.php");
+ 	header("location:http://localhost:8080/SISSMKN2/views/siswa/biodata/index.php");
 }elseif ($aksi == "tambahp") {
     $db->tambahdu(
         $_POST['nis'],
@@ -578,7 +578,7 @@ foreach ($db->getdetaildu($_POST['nis']) as $item) {
                 $msg = $e->getMessage();
             }
 
-    header("location:http://localhost:8080/sissmkn2/views/siswa/biodata/index.php");
+    header("location:http://localhost:8080/SISSMKN2/views/siswa/biodata/index.php");
  }elseif ($aksi == "hapus") {
     $db->deletePO($_GET['po_id']);
  	header("location:http://localhost/ta_cendana_javiera/views/produksi/production_order/index.php");
@@ -668,7 +668,7 @@ foreach ($db->getdetaildu($_POST['nis']) as $item) {
             } catch (Exception $e) {
                 $msg = $e->getMessage();
             }
-    header("location:http://localhost:8080/sissmkn2/views/kesiswaan/daftarulang/index_tambah.php");
+    header("location:http://localhost:8080/SISSMKN2/views/kesiswaan/daftarulang/index_tambah.php");
         }
         foreach($db->tampildujr('ap') as $item){
 
@@ -711,7 +711,7 @@ foreach ($db->getdetaildu($_POST['nis']) as $item) {
             } catch (Exception $e) {
                 $msg = $e->getMessage();
             }
-    header("location:http://localhost:8080/sissmkn2/views/kesiswaan/daftarulang/index_tambah.php");
+    header("location:http://localhost:8080/SISSMKN2/views/kesiswaan/daftarulang/index_tambah.php");
         }
         foreach($db->tampildujr('kpr') as $item){
 
@@ -754,7 +754,7 @@ foreach ($db->getdetaildu($_POST['nis']) as $item) {
             } catch (Exception $e) {
                 $msg = $e->getMessage();
             }
-    header("location:http://localhost:8080/sissmkn2/views/kesiswaan/daftarulang/index_tambah.php");
+    header("location:http://localhost:8080/SISSMKN2/views/kesiswaan/daftarulang/index_tambah.php");
         }
         foreach($db->tampildujr('jb') as $item){
 
@@ -797,7 +797,7 @@ foreach ($db->getdetaildu($_POST['nis']) as $item) {
             } catch (Exception $e) {
                 $msg = $e->getMessage();
             }
-    header("location:http://localhost:8080/sissmkn2/views/kesiswaan/daftarulang/index_tambah.php");
+    header("location:http://localhost:8080/SISSMKN2/views/kesiswaan/daftarulang/index_tambah.php");
         }
         foreach($db->tampildujr('tkj') as $item){
 
@@ -840,7 +840,7 @@ foreach ($db->getdetaildu($_POST['nis']) as $item) {
             } catch (Exception $e) {
                 $msg = $e->getMessage();
             }
-    header("location:http://localhost:8080/sissmkn2/views/kesiswaan/daftarulang/index_tambah.php");
+    header("location:http://localhost:8080/SISSMKN2/views/kesiswaan/daftarulang/index_tambah.php");
         }
         foreach($db->tampildujr('sti') as $item){
 
@@ -883,7 +883,7 @@ foreach ($db->getdetaildu($_POST['nis']) as $item) {
             } catch (Exception $e) {
                 $msg = $e->getMessage();
             }
-    header("location:http://localhost:8080/sissmkn2/views/kesiswaan/daftarulang/index_tambah.php");
+    header("location:http://localhost:8080/SISSMKN2/views/kesiswaan/daftarulang/index_tambah.php");
         }
     }
 ?>

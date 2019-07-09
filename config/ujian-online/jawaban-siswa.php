@@ -27,12 +27,12 @@ class Jawaban_siswa extends Database{
 		return $query;
 	}
 
-	public function add_jawaban_ujian($id_jawaban_siswa, $id_ujian_online, $nis, $no_soal, $jawaban, $status){
+	public function add_jawaban_ujian($id_jawaban_siswa, $id_ujian_online, $no_soal, $jawaban, $status){
 		$con = $this->dbconnect();
-		$sql = 'INSERT INTO jawaban_siswa(id_jawaban_siswa, id_ujian_online, nis, no_soal, jawaban, status) VALUES("'.$id_jawaban_siswa.'","'.$id_ujian_online.'","'.$nis.'","'.$no_soal.'","'.$jawaban.'","'.$status.'")';
+		$sql = 'INSERT INTO jawaban_siswa(id_jawaban_siswa, id_ujian_online, no_soal, jawaban, status_jwb) VALUES("'.$id_jawaban_siswa.'","'.$id_ujian_online.'","'.$no_soal.'","'.$jawaban.'","'.$status.'")';
 		$query = mysqli_query($con,$sql);
         if (!$query) {
-			return "Failed";
+			return mysqli_error($con);
 		}
 		else{
 			return "Success";
@@ -45,7 +45,7 @@ class Jawaban_siswa extends Database{
 		$query = mysqli_query($con,$sql);
 
 		if (!$query) {
-			return "Failed";
+			mysqli_error($con);
 		}
 		else{
 			return "Success"; 
