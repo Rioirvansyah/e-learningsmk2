@@ -27,7 +27,7 @@ class elearning2 extends Database
 
 	public function show_elearning($id_kelas, $id_mapel){
 		$con = $this->dbconnect();
-		$sql = 'SELECT * FROM data_elearning as d JOIN t_pelajaran as m ON d.idpel = m.idpel JOIN t_kelas as k ON d.id_kelas = k.id_kelas WHERE d.idpel="'.$id_mapel.'" or d.id_kelas="'.$id_kelas.'" ';
+		$sql = 'SELECT * FROM data_elearning as d JOIN t_pelajaran as m ON d.idpel = m.idpel JOIN t_kelas as k ON d.id_kelas = k.id_kelas WHERE d.idpel="'.$id_mapel.'" and d.id_kelas="'.$id_kelas.'" ';
 		$query = mysqli_query($con,$sql);
 		return $query; 
 	}
@@ -90,6 +90,35 @@ class elearning2 extends Database
 			return "Success";
 		}
 	}
+
+	public function get_kelas($id){
+		$con = $this->dbconnect();	
+		$sql = "SELECT * FROM user as u JOIN t_siswa as ts ON u.no_induk = ts.no_induk JOIN t_kelas as k ON ts.id_kelas = k.id_kelas where u.no_induk='$id' " or die(mysqli_error());
+		$query = mysqli_query($con,$sql);
+		return $query->fetch_assoc();
+	}
+
+	public function get_guru($id){
+		$con = $this->dbconnect();	
+		$sql = "SELECT * FROM t_staf where nip='$id'" or die(mysqli_error());
+		$query = mysqli_query($con,$sql);
+		return $query->fetch_assoc();
+	}
+
+	public function get_mapel($id){
+		$con = $this->dbconnect();	
+		$sql = "SELECT * FROM ujian_online as u join t_pelajaran as p on u.idpel = p.idpel where nip='$id'" or die(mysqli_error());
+		$query = mysqli_query($con,$sql);
+		return $query;
+	}
+
+	public function cari_nilai($id_kelas, $id_mapel){
+		$con = $this->dbconnect();
+		$sql = 'SELECT * FROM nilai_ujian as nu JOIN t_siswa as ts on nu.no_induk = ts.no_induk JOIN ujian_online as un ON nu.id_ujian_online = un.id_ujian_online JOIN t_kelas as k ON un.id_kelas = k.id_kelas JOIN t_pelajaran as t on t.idpel = un.idpel WHERE un.idpel="'.$id_mapel.'" and un.id_kelas="'.$id_kelas.'" ';
+		$query = mysqli_query($con,$sql);
+		return $query; 
+	}
+
 }
 
 class Kelas extends Database{

@@ -115,10 +115,10 @@ foreach ($show as $data) {
                             </div>
                           </div>
                           </span>
-                          <div class="row form-group">
+                          <!-- <div class="row form-group">
                             <div class="col col-md-2"><label for="tempatlahir" class=" form-control-label">Poin Nilai</label></div>
                             <div class="col-12 col-md-10"><input type="text" id="poin_nilai" name="poin_nilai" placeholder="poin per soal" class="form-control" value="<?php echo $data['poin_nilai'] ; ?>"></div>
-                          </div>
+                          </div> -->
                       </div>
                           
 

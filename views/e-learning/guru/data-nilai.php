@@ -8,9 +8,7 @@ $obj_kelas = new Kelas();
 $obj_mapel = new Mata_pelajaran();
 $showkelas = $obj_kelas->show_kelas();
 $showmapel = $obj_mapel->show_mapel();
-$showkelasbyuser = $obj->get_kelas($_SESSION['no_induk']);
-
-
+$showmapelbyuser = $obj->get_mapel($_SESSION['nip']);
 ?>
 
         <div class="breadcrumbs">
@@ -36,26 +34,24 @@ $showkelasbyuser = $obj->get_kelas($_SESSION['no_induk']);
                   <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">List </strong>Data File
+                            <strong class="card-title">List </strong>Data Nilai
                         </div>
                         <form method="POST" action="">
                         <div class="card-body">
                           <div class="col col-md-1"><label for="selectSm" class=" form-control-label">Kelas</label></div>
                             <div class="col-3 col-md-2">
-                                <input type="hidden" name="id_kelas" id="id_kelas" value="<?php echo $showkelasbyuser['id_kelas'] ?>">
-                                <input type="text" name="kelas" id="kelas" value="<?php echo $showkelasbyuser['kelas'] ?>" class="form-control" disabled>
-                              <!-- <select name="id_kelas" id="id_kelas" class="form-control-sm form-control"> -->
+                              <select name="id_kelas" id="id_kelas" class="form-control-sm form-control">
                                 <!-- <option value="">All</option> -->
-                                <!-- <?php foreach ($showkelasbyuser as $datakelas) { ?>
-                                <option value="<?php echo $datakelas['id_kelas']; ?>"><?php echo $datakelas['username']; ?></option>
-                                <?php } ?> -->
+                                <?php foreach ($showkelas as $datakelas) { ?>
+                                <option value="<?php echo $datakelas['id_kelas']; ?>"><?php echo $datakelas['kelas']; ?></option>
+                                <?php } ?>
                               </select>
                             </div>
                           <div class="col col-md-1"><label for="selectSm" class=" form-control-label">Mata Pelajaran</label></div>
                             <div class="col-3 col-md-2">
                               <select name="id_mapel" id="id_mapel" class="form-control-sm form-control">
                                 <!-- <option value="">All</option> -->
-                                <?php foreach ($showmapel as $datamapel) { ?>
+                                <?php foreach ($showmapelbyuser as $datamapel) { ?>
                                 <option value="<?php echo $datamapel['idpel']; ?>"><?php echo $datamapel['pelajaran'];?></option>
                                 <?php } ?>
                               </select>
@@ -70,23 +66,44 @@ $showkelasbyuser = $obj->get_kelas($_SESSION['no_induk']);
                     if (isset($_POST['cari'])){   
                     $id_kelas = $_POST['id_kelas'];
                     $id_mapel = $_POST['id_mapel'];
-                    $show = $obj->show_elearning($id_kelas, $id_mapel);
+                    $show = $obj->cari_nilai($id_kelas, $id_mapel);
                     if (mysqli_num_rows($show) == 0) {
                         echo "tidak ditemukan";
                     }else{
                     while ($data = mysqli_fetch_array($show)) {
                      	?>
-                    <a href="detail-elearning.php?id_elearning=<?php echo $data["id_elearning"]; ?>">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <img class="card-img-top" src="<?php echo $siteurl; ?>/images/pdf.jpg" alt="Card image cap">
-                            <div class="card-body" style="height: 150px;">
-                                <h4 class="card-title mb-1"><?php echo $data["judul"]; ?></h4>
-                                <p class="card-text"><?php echo $data["tanggal_upload"]; ?></p>
-                            </div>
+                            <div class="card-body">
+                              <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th width="9%">Kelas</th>
+                                    <th>Mata Pelajaran</th>
+                                    <th>Nilai Pilihan Ganda</th>
+                                    <th>Nilai Isian</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                               <?php 
+                                    $no = 1;
+                                    if(is_array($show) | (is_object($show))){
+                                    foreach ($show as $data) {
+                                ?>
+                                            <th><?php echo $no ?></th>   
+                                            <th><?php echo $data["nama"]; ?></th>
+                                            <th><?php echo $data["kelas"]; ?></th>
+                                            <th><?php echo $data["pelajaran"]; ?></th>
+                                            <th><?php echo $data["nilai_pg"]; ?></th>
+                                            <th><?php echo $data["nilai_isi"]; ?></th>
+                                        </tr>
+                                        <?php
+                                        $no++;  
+                                }}
+                                ?>
+                              </tbody>
+                            </table>
                         </div>
-                    </div>
-                    </a>
             
                     <?php }}
                    } ?>

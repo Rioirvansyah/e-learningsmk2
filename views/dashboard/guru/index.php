@@ -49,7 +49,7 @@ require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php");
                                                             Nomor Induk Pegawai
                                                         </li>
                                                         <li>
-                                                            <h5><?php echo $_SESSION['namaJabatan'];?></h5>
+                                                            <h5><?php echo $_SESSION['menu'];?></h5>
                                                             Jabatan
                                                         </li>
                                                     </ul>

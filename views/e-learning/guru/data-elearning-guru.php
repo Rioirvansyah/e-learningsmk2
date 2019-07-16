@@ -42,7 +42,8 @@ $show = $obj->show_elearning_guru2();
                                     <th>Mata Pelajaran</th>
                                     <th>File</th>
                                     <th>Tanggal Upload</th>
-                                    <th width="28%"></th>
+
+                                    <th width="28%">Aksi</th>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -59,8 +60,10 @@ $show = $obj->show_elearning_guru2();
                                             <th><?php echo $data["tanggal_upload"]; ?></th>
                                             <th>
                                             <a href="../siswa/detail-elearning.php?id_elearning=<?php echo $data["id_elearning"]; ?>"><button type="" class="btn btn-success btn-sm"><i class="fa fa-info"></i> Detail</button></a>
+                                            <?php if ($data['nip'] == $_SESSION['nip']){ ?>
                                             <a href="edit-elearning.php?id_elearning=<?php echo $data["id_elearning"]; ?>"><button type="" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i> Edit</button></a>
                                             <a href='proses_tambah.php?id_elearning=<?php echo $data["id_elearning"]; ?>&aksi=hapus' onclick="return confirm(\'Yakin?\')"><button type="" class="btn btn-danger btn-sm"><i class="fa fa-trash "></i> Delete</button></a>
+                                            <?php } ?>
                                         </tr>
                                         <?php
                                         $no++;  

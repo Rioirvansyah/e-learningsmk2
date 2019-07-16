@@ -22,16 +22,35 @@ class Ujian_online extends Database{
 
 	function show_ujian(){
 		$con = $this->dbconnect();
-		$sql = 'SELECT *FROM ujian_online as u JOIN t_kelas as k ON u.id_kelas = k.id_kelas JOIN t_pelajaran as m ON u.idpel = m.idpel';
+		$sql = 'SELECT * FROM ujian_online as u JOIN t_kelas as k on u.id_kelas = k.id_kelas JOIN t_pelajaran as m ON u.idpel = m.idpel';
 		$query = mysqli_query($con,$sql);
 		return $query;
 	}
+	
 	function show_ujian_waktu(){
 		$con = $this->dbconnect();
-		$sql = 'SELECT *FROM ujian_online as u JOIN t_kelas as k ON u.id_kelas = k.id_kelas JOIN t_pelajaran as m ON u.idpel = m.idpel WHERE date_format(tgl_ujian, "%Y-%m-%d")=CURDATE()';
+		$sql = 'SELECT * FROM ujian_online as u JOIN t_kelas as k on u.id_kelas = k.id_kelas JOIN t_pelajaran as m ON u.idpel = m.idpel WHERE date_format(tgl_ujian, "%Y-%m-%d")=CURDATE()';
+
+		$query = mysqli_query($con,$sql);
+
+		return $query;
+	}
+
+	function show_ujian2($id){
+		$con = $this->dbconnect();
+		$sql = 'SELECT * FROM user as us JOIN t_siswa as ts ON us.no_induk = ts.no_induk JOIN t_kelas as k ON ts.id_kelas = k.id_kelas JOIN ujian_online as u on u.id_kelas = k.id_kelas JOIN t_pelajaran as m ON u.idpel = m.idpel WHERE us.no_induk="$id"';
 		$query = mysqli_query($con,$sql);
 		return $query;
-		}
+	}
+
+	function show_ujian_waktu2($id){
+		$con = $this->dbconnect();
+		$sql = "SELECT * FROM user as us JOIN t_siswa as ts ON us.no_induk = ts.no_induk JOIN t_kelas as k ON ts.id_kelas = k.id_kelas JOIN ujian_online as u on u.id_kelas = k.id_kelas JOIN t_pelajaran as m ON u.idpel = m.idpel WHERE date_format(tgl_ujian, '%Y-%m-%d')=CURDATE() and us.no_induk='$id'";
+
+		$query = mysqli_query($con,$sql);
+
+		return $query;
+	}
 
 	function show_ujian_detail(){
 		$con = $this->dbconnect();
@@ -154,6 +173,13 @@ class Ujian_online extends Database{
 		}else{
 			return $q;
 		}
+	}
+
+	public function get_guru($id){
+		$con = $this->dbconnect();	
+		$sql = "SELECT * FROM t_staf where nip='$id'" or die(mysqli_error());
+		$query = mysqli_query($con,$sql);
+		return $query->fetch_assoc();
 	}
 
 }

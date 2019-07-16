@@ -6,7 +6,7 @@ $password = md5($_POST['password']);
 
 
 $sql = "select user.username, user.password, user.email, user.nip, user.no_induk, user.menu,
-t_siswa.nama, user.no_induk, 
+t_siswa.nama, t_staf.nama_guru, user.no_induk, 
 t_staf.nip, t_staf.email, user_level.menu from user
  
 LEFT JOIN t_siswa on t_siswa.no_induk = user.no_induk
@@ -21,6 +21,7 @@ if($cek > 0){
 	$data = mysqli_fetch_array($login);
 	$_SESSION['menu'] = $data['menu'];
 	$_SESSION['nama'] = $data['nama'];
+	$_SESSION['Nama_guru'] = $data['nama_guru'];
 	$_SESSION['nip'] = $data['nip'];
 	$_SESSION['email'] = $data['email'];
 	$_SESSION['no_induk'] = $data['no_induk'];

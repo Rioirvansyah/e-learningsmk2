@@ -1386,7 +1386,8 @@ header .form-inline {
   .card .card-footer {
     padding: 0.65rem 1.25rem;
     background-color: #f0f3f5;
-    border-top: 1px solid #c2cfd6; }
+    border-top: 1px solid #c2cfd6;
+    border-bottom: 1px solid #c2cfd6; }
     .card .card-footer ul li {
       display: table-cell;
       padding: 0 1rem;

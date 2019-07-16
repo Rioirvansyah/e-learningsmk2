@@ -83,7 +83,7 @@ $show2 = $obj_guru->show_guru();
                                     <option value="<?php echo $data2["nip"]; ?>" 
                                       <?php if($data3["nip"] == $data2["nip"]) { 
                                         echo "selected";
-                                      } ?> ><?php echo $data2["nama"]; ?></option>
+                                      } ?> ><?php echo $data2["nama_guru"]; ?></option>
                           <?php } ?>
                                 </select>
                             </div>

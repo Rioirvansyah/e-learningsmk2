@@ -58,7 +58,7 @@ $siteurl = 'http://localhost:8080/SISSMKN2';
                     <input type="hidden" value="<?= $v['jawaban_benar'];?>" id="kunci<?= $v['id_ujian_online_detail'];?>">
                         <div class="card-body card-block ">
                         <div class="row form-group">
-                                <div class="col col-md-1"><?= $no; ?>. </div> 
+                                <div style="margin-left: 15px"><?= $no; ?>. </div> 
                             <?php if($v['gambar']){ ?>
                                 <div class="col-12 col-md-11"><?php echo $v['gambar']; ?></div>
                                 <div class="col col-md-1"></div> 
@@ -141,11 +141,13 @@ $siteurl = 'http://localhost:8080/SISSMKN2';
                       </div>
 
               <?php $no++; } ?>
-                  </div>
-               </div>
 
+                  </div>
+                  <button type="button" onclick="konfirmasi()" class="btn btn-danger btn-sm">konfirmasi</button>
+               </div>
+                
                           
-                          <button type="button" onclick="konfirmasi()">konfirmasi</button>
+                          
 
                     </div>
                </div>

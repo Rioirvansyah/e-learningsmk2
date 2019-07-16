@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 16, 2019 at 04:52 PM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Host: localhost
+-- Generation Time: Jul 09, 2019 at 03:33 PM
+-- Server version: 10.1.35-MariaDB
+-- PHP Version: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -46,8 +48,8 @@ INSERT INTO `data_elearning` (`id_elearning`, `judul`, `deskripsi`, `nama_file`,
 ('DE-00003', 'Manual Testing 1', 'qwerty', 'CV.pdf', '2019-07-06 18:09:37', 165001, 1, '1'),
 ('DE-00001', 'Manual Testing 1', 'qwerty', 'Global CV.pdf', '2019-07-01 19:32:37', 165004, 1, '3'),
 ('DE-00002', 'Manual Testing 1', 'qweryu', '261676.pdf', '2019-07-01 19:48:57', 165005, 1, '4'),
-('DE-00005', 'Ini Modul', 'Modulnya ya', 'Transkip Nilai.pdf', '2019-07-06 17:38:19', 165002, 1, '4'),
-('DE-00006', 'Modul Saya', 'Ini Modul Saya', 'Paper Web Crawler.doc', '2019-07-16 14:24:10', 165002, 1, '2');
+('DE-00005', 'Ini Modul', 'Modulnya ya', 'Transkip Nilai.pdf', '2019-07-06 17:38:19', 0, 1, '4'),
+('DE-00006', 'Pelajaran iki', 'emboh', 'MONITORING NPL AMANAH PER TANGGAL 10 MEI 2019.pdf', '2019-07-09 14:49:04', 165002, 1, '1');
 
 -- --------------------------------------------------------
 
@@ -69,8 +71,7 @@ CREATE TABLE `jawaban_siswa` (
 
 INSERT INTO `jawaban_siswa` (`id_jawaban_siswa`, `id_ujian_online`, `no_induk`, `id_ujian_online_detail`, `jawaban`) VALUES
 (22, 'UO-00002', '0013223952', '6', 'iya dong'),
-(21, 'UO-00002', '0013223952', '8', 'embohhh'),
-(23, 'UO-00004', '0010881115', '11', 'awwwaaa');
+(21, 'UO-00002', '0013223952', '8', 'embohhh');
 
 -- --------------------------------------------------------
 
@@ -93,8 +94,7 @@ CREATE TABLE `nilai_ujian` (
 --
 
 INSERT INTO `nilai_ujian` (`id_nilai_ujian`, `id_ujian_online`, `no_induk`, `nilai_total`, `nilai_pg`, `nilai_isi`, `status_nilai`) VALUES
-(8, 'UO-00002', '0013223952', '90', 100, 80, 'sudah'),
-(13, 'UO-00004', '0010881115', NULL, 0, NULL, NULL);
+(8, 'UO-00002', '0013223952', '90', 100, 80, 'sudah');
 
 -- --------------------------------------------------------
 
@@ -729,7 +729,7 @@ INSERT INTO `t_sis_thajar` (`id_sis_th`, `no_urut`, `no_induk`, `nama`, `kelas`,
 
 CREATE TABLE `t_staf` (
   `user_id` int(5) DEFAULT NULL,
-  `nama_guru` varchar(50) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `nama` varchar(50) COLLATE latin1_general_ci NOT NULL DEFAULT '',
   `nip` varchar(25) COLLATE latin1_general_ci NOT NULL DEFAULT '',
   `kelamin` char(2) COLLATE latin1_general_ci DEFAULT '',
   `alamat` varchar(60) COLLATE latin1_general_ci DEFAULT '',
@@ -777,7 +777,7 @@ CREATE TABLE `t_staf` (
 -- Dumping data for table `t_staf`
 --
 
-INSERT INTO `t_staf` (`user_id`, `nama_guru`, `nip`, `kelamin`, `alamat`, `tugas`, `telp`, `hp`, `email`, `pelajaran`, `tgl_lahir`, `tmp_lahir`, `kode`, `pangkat`, `kategori`, `profilstaf`, `th_ajar`, `no_induk_baru`, `depan_gelar`, `belakang_gelar`, `nama_ibu_kandung`, `kode_pos`, `golongan_darah`, `kelurahan`, `kecamatan`, `provinsi`, `daerah`, `status_nikah`, `tanggal_masuk`, `jenis_pegawai`, `sertifikasi_guru`, `tmt_pns`, `akses`, `arsip`, `tugas_tambahan`, `pangkat_pns`, `jabatan_pns`, `golongan_pns`, `pendidikan_terahir`, `prog_diampu`, `masakerja_th`, `masakerja_bl`, `tgl_update`) VALUES
+INSERT INTO `t_staf` (`user_id`, `nama`, `nip`, `kelamin`, `alamat`, `tugas`, `telp`, `hp`, `email`, `pelajaran`, `tgl_lahir`, `tmp_lahir`, `kode`, `pangkat`, `kategori`, `profilstaf`, `th_ajar`, `no_induk_baru`, `depan_gelar`, `belakang_gelar`, `nama_ibu_kandung`, `kode_pos`, `golongan_darah`, `kelurahan`, `kecamatan`, `provinsi`, `daerah`, `status_nikah`, `tanggal_masuk`, `jenis_pegawai`, `sertifikasi_guru`, `tmt_pns`, `akses`, `arsip`, `tugas_tambahan`, `pangkat_pns`, `jabatan_pns`, `golongan_pns`, `pendidikan_terahir`, `prog_diampu`, `masakerja_th`, `masakerja_bl`, `tgl_update`) VALUES
 (1, 'hana', '1', 'P', 'malang', 'guru', NULL, NULL, NULL, 'bahasa inggris', NULL, NULL, '', '0', '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'N', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-07-06 14:49:22'),
 (2, 'pedrik', '2', 'L', 'malang', 'guru', NULL, NULL, NULL, 'matematika', NULL, NULL, '', '0', '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'N', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-01-23 14:35:09'),
 (3, 'Gery', '3', 'la', 'malang', 'guru', NULL, NULL, NULL, 'basis data', NULL, NULL, '', '0', '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'N', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-01-23 14:25:44'),
@@ -863,9 +863,7 @@ CREATE TABLE `ujian_online` (
 
 INSERT INTO `ujian_online` (`id_ujian_online`, `id_kelas`, `idpel`, `nip`, `jam_mulai`, `jam_selesai`, `jenis_ujian`, `bab`, `tgl_ujian`, `waktu`, `tgl_upload`, `status_ujian`) VALUES
 ('UO-00002', 1, 165002, '1', '10:00:00', '22:00:00', 'Tugas', 'bab 1', '2019-07-09', '2', '2019-07-09 14:53:12', 'tidak'),
-('UO-00001', 1, 165001, '2', '07:00:00', '19:00:00', 'Ujian Tengah Semester', '', '2019-07-09', '1', '2019-07-09 15:30:11', 'tidak'),
-('UO-00003', 1, 165005, '2', '20:29:00', '23:59:00', 'Ulangan', '', '2019-07-15', '2', '2019-07-15 15:30:08', 'tidak'),
-('UO-00004', 1, 165004, '2', '19:30:00', '23:59:00', 'Ujian Tengah Semester', '', '2019-07-16', '2', '2019-07-16 14:46:41', 'tidak');
+('UO-00001', 1, 165001, '2', '07:00:00', '19:00:00', 'Ujian Tengah Semester', '', '2019-07-09', '1', '2019-07-09 15:30:11', 'tidak');
 
 -- --------------------------------------------------------
 
@@ -900,10 +898,7 @@ INSERT INTO `ujian_online_detail` (`id_ujian_online_detail`, `id_ujian_online`, 
 (6, 'UO-00002', 2, 'apakah kamu hebat ?', 'Essay', '', '', '', '', '', '', '', ''),
 (3, 'UO-00001', 3, 'aku apa kamu ?', 'Essay', '', '', '', '', '', '', '', ''),
 (4, 'UO-00001', 4, 'Siapa kamu ??', 'Pilihan Ganda', '', 'aku', 'kamu', 'siapa', 'dia', 'cinta', 'E', ''),
-(2, 'UO-00001', 2, 'apakah kamu sayang aku?', 'Essay', '', '', '', '', '', '', '', ''),
-(9, 'UO-00003', 1, 'What The?', 'Pilihan Ganda', '', 'a', 'b', 'c', 'd', 'Hell', 'E', ''),
-(10, 'UO-00004', 1, 'apa?', 'Pilihan Ganda', '', 'ab', 'ac', 'ad', 'ae', 'af', 'E', ''),
-(11, 'UO-00004', 2, 'aw?', 'Essay', '', '', '', '', '', '', '', '');
+(2, 'UO-00001', 2, 'apakah kamu sayang aku?', 'Essay', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -933,12 +928,10 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`userid`, `username`, `password`, `nama`, `email`, `nip`, `no_induk`, `menu`, `ip`, `waktu`, `kunjung`, `status`) VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', '', 'fikrisyahrizal71@gmail.com', '', '', 'admin', NULL, NULL, NULL, 1),
 (2, 'siswa', 'bcd724d15cde8c47650fda962968f102', '', 'siswa@gmail.com', '', '0013223952', 'siswa', NULL, NULL, NULL, 1),
-(3, 'guru', '77e69c137812518e359196bb2f5e9bb9', '', 'guru@gmail.com', '2', '', 'guru', NULL, NULL, NULL, 1),
+(3, 'guru', '77e69c137812518e359196bb2f5e9bb9', '', 'guru@gmail.com', '', '', 'guru', NULL, NULL, NULL, 1),
 (4, 'absensi', '986bf02c97e4738cff389ec0b3d784bc', '', 'absensi@gmail.com', '', '', 'absensi', NULL, NULL, NULL, 1),
 (5, 'orangtua', '344c999a63cd55b3035cbf76c2691f88', 'Kim Dahyun', 'orangtua@gmail.com', '', '0013224080', 'orangtua', NULL, NULL, NULL, 1),
-(6, 'orangtuaA', 'd1c75259b62c36eae9b9aca8aa4d5007', 'Fikri', 'orangtuaA@gmail.com', '', '0013223598', 'orangtua', NULL, NULL, NULL, 1),
-(8, 'guru2', '440a21bd2b3a7c686cf3238883dd34e9', '', 'guru2@gmail.com', '1', '', 'guru', NULL, NULL, NULL, 1),
-(7, 'siswa2', '331633a246a4e1ceefc9539a71fcd124', '', 'siswa2@gmail.com', '', '0010881115', 'siswa', NULL, NULL, NULL, 1);
+(6, 'orangtuaA', 'd1c75259b62c36eae9b9aca8aa4d5007', 'Fikri', 'orangtuaA@gmail.com', '', '0013223598', 'orangtua', NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -1131,92 +1124,111 @@ ALTER TABLE `user_level`
 -- AUTO_INCREMENT for table `jawaban_siswa`
 --
 ALTER TABLE `jawaban_siswa`
-  MODIFY `id_jawaban_siswa` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_jawaban_siswa` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
 --
 -- AUTO_INCREMENT for table `nilai_ujian`
 --
 ALTER TABLE `nilai_ujian`
-  MODIFY `id_nilai_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_nilai_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT for table `t_absensi`
 --
 ALTER TABLE `t_absensi`
   MODIFY `idabsen` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=137;
+
 --
 -- AUTO_INCREMENT for table `t_jadwal`
 --
 ALTER TABLE `t_jadwal`
   MODIFY `idajar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `t_jurnal`
 --
 ALTER TABLE `t_jurnal`
   MODIFY `id_jurnal` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=454;
+
 --
 -- AUTO_INCREMENT for table `t_kelas`
 --
 ALTER TABLE `t_kelas`
   MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=669;
+
 --
 -- AUTO_INCREMENT for table `t_member`
 --
 ALTER TABLE `t_member`
   MODIFY `userid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26403;
+
 --
 -- AUTO_INCREMENT for table `t_pelajaran`
 --
 ALTER TABLE `t_pelajaran`
   MODIFY `idpel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=165006;
+
 --
 -- AUTO_INCREMENT for table `t_pelaj_jadwal`
 --
 ALTER TABLE `t_pelaj_jadwal`
   MODIFY `id_pelaj_jadwal` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4193;
+
 --
 -- AUTO_INCREMENT for table `t_programahli`
 --
 ALTER TABLE `t_programahli`
   MODIFY `idprog` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+
 --
 -- AUTO_INCREMENT for table `t_ruang`
 --
 ALTER TABLE `t_ruang`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+
 --
 -- AUTO_INCREMENT for table `t_siswa`
 --
 ALTER TABLE `t_siswa`
   MODIFY `no_daftar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6102138;
+
 --
 -- AUTO_INCREMENT for table `t_sis_thajar`
 --
 ALTER TABLE `t_sis_thajar`
   MODIFY `id_sis_th` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37419;
+
 --
 -- AUTO_INCREMENT for table `t_thajar`
 --
 ALTER TABLE `t_thajar`
   MODIFY `idthajar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
 --
 -- AUTO_INCREMENT for table `t_wali`
 --
 ALTER TABLE `t_wali`
   MODIFY `idwali` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
 --
 -- AUTO_INCREMENT for table `ujian_online_detail`
 --
 ALTER TABLE `ujian_online_detail`
   MODIFY `id_ujian_online_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
 --
 -- AUTO_INCREMENT for table `user_level`
 --
 ALTER TABLE `user_level`
   MODIFY `idlevel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1496;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -76,6 +76,7 @@ $show = $obj->show_ujian();
                                             <th><?php echo $data["tgl_upload"]; ?></th>
                                             <th><?php echo $data["status_ujian"]; ?></th>
                                             <th>
+                                            <?php if ($data['nip'] == $_SESSION['nip']){ ?>
                                             <a href="detail-ujian-online.php?id_ujian_online=<?php echo $data["id_ujian_online"]; ?>"><button type="" class="btn btn-success btn-sm"><i class="fa fa-info"></i> Detail</button></a>
                                             <a href="edit-ujian-online.php?id_ujian_online=<?php echo $data["id_ujian_online"]; ?>"><button type="" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i> Edit</button></a>
                                             <?php 
@@ -86,7 +87,7 @@ $show = $obj->show_ujian();
                                              <?php }
                                             ?>
                                             <a href="proses_tambah-ujian.php?id_ujian_online=<?php echo $data["id_ujian_online"]; ?>&aksi=hapus" onclick="return confirm(\'Yakin?\')"><button type="" class="btn btn-danger btn-sm"><i class="fa fa-trash "></i> Delete</button></a></th>
-                                            
+                                            <?php } ?>
                                         </tr>
                                         <?php
                                         $no++;  

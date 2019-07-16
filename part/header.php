@@ -174,12 +174,12 @@ if($_SESSION['status'] != "login"){
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
                                 Selamat datang&nbsp;<b><?php
-                                    if ($_SESSION['menu'] == "t_siswa"){
+                                    if ($_SESSION['menu'] == "siswa"){
                                         echo $_SESSION['nama'];
-                                    }elseif ($_SESSION['menu'] != "t_siswa") {
+                                    }elseif ($_SESSION['menu'] != "siswa") {
                                         echo $_SESSION['Nama_guru'];
                                     }
-                                ?></b>
+                                ?></b>, <a href="http://localhost:8080/SISSMKN2/views/login/login/logout.php"> Logout </a>
                                 &nbsp;&nbsp;&nbsp;
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?php 

@@ -3,8 +3,9 @@ require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/header.php");
 require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/Database.php");
 require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/ujian-online/ujian-online.php");
 $obj = new Ujian_online();
-$show1 = $obj->show_ujian();
-$show = $obj->show_ujian_waktu();
+$show1 = $obj->show_ujian2($_SESSION['no_induk']);
+$show = $obj->show_ujian_waktu2($_SESSION['no_induk']);
+
 if(isset($_SESSION["ujian"])){ ?>
     <script>alert('Ujian Sedang Berlangsung');
     window.location="http://localhost:8080/SISSMKN2/views/ujian-online/siswa/data-ujian-online1.php?id_ujian_online=<?= $_SESSION["ujian"] ?>"</script>
@@ -93,7 +94,7 @@ if(isset($_SESSION["ujian"])){ ?>
                              if($data["status_ujian"]=="aktif"){ ?>
                             <div class="card-footer" align="right">
                                 <a onclick="mulaiSesiUjian(event,'<?= $data['id_ujian_online'];?>')"> <button type="submit" class="btn btn-primary btn-sm" id="tambah" name="tambah">
-                                  <i class="fa fa-dot-circle-o"></i> Next
+                                  <i class="fa fa-dot-circle-o"></i> Kerjakan Ujian
                                 </button></a>
                             </div>
                         <?php }}else{

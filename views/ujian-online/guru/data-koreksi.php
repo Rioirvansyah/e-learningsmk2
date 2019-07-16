@@ -65,6 +65,7 @@ $show = $obj->show_ujian();
                                                      'Wednesday' => 'Rabu',
                                                     );
                                 ?>
+                                <?php if ($data['nip'] == $_SESSION['nip']){ ?>
                                             <th><?php echo $no; ?></th>   
                                             <th><?php echo $data["kelas"]; ?></th>
                                             <th><?php echo $data["pelajaran"]; ?></th>
@@ -80,7 +81,7 @@ $show = $obj->show_ujian();
                                         <?php
                                         $no++;  
                                      
-                                }}
+                                }}}
                                 ?>
                                 
                               </tbody>

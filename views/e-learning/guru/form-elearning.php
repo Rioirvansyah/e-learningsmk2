@@ -8,7 +8,8 @@ $obj_mapel = new Mata_pelajaran();
 $obj_guru = new Guru();
 $show = $obj_kelas->show_kelas();
 $show1 = $obj_mapel->show_mapel();
-$show2 = $obj_guru->show_guru();
+$showgurubyuser = $obj->get_guru($_SESSION['nip']);
+
 ?>  
         <div class="breadcrumbs">
             <div class="col-sm-4">
@@ -53,13 +54,12 @@ $show2 = $obj_guru->show_guru();
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">Guru</label></div>
                             <div class="col-12 col-md-9">
-                                <select name="nip" data-placeholder="Pilih Guru" class="form-control">
+                                <input type="hidden" name="nip" id="nip" value="<?php echo $showgurubyuser['nip'] ?>">
+                                <input type="text" name="nama_guru" id="nama_guru" value="<?php echo $showgurubyuser['nama_guru'] ?>" class="form-control" disabled>
+                                <!-- <select name="nip" data-placeholder="Pilih Guru" class="form-control">
                                     <option value="">Pilih Guru</option>
-                          <?php foreach ($show2 as $data2) {
-                           ?>
-                                    <option value="<?php echo $data2["nip"]; ?>"><?php echo $data2["nama"]; ?></option>
-                          <?php } ?>
-                                </select>
+                                    <option value="<?php echo $data2["nip"]; ?>"><?php echo $data2["nama_guru"]; ?></option>
+                                </select> -->
                             </div>
                           </div>
                           <div class="row form-group">

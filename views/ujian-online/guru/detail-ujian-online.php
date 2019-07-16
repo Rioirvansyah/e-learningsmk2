@@ -52,7 +52,7 @@ $show = $obj->show_detail_ujian1($id_ujian_online);
                                     <th>D</th>
                                     <th>E</th>
                                     <th>Jawaban Benar</th>
-                                    <th>Poin Nilai</th>
+                                    <!-- <th>Poin Nilai</th> -->
                                     <th></th>
                                   </tr>
                                 </thead>
@@ -80,7 +80,7 @@ $show = $obj->show_detail_ujian1($id_ujian_online);
                                     <th></th>
                                     <?php }
                                     ?>
-                                    <th><?php echo $data['poin_nilai']; ?></th>
+                                    <!-- <th><?php echo $data['poin_nilai']; ?></th> -->
 
                                     <th>
                                     <!-- <a href="detail-ujian-online.php?id_ujian_online=<?php echo $data["id_ujian_online"]; ?>"><button type="" class="btn btn-success btn-sm"><i class="fa fa-info"></i> Detail</button></a> -->
