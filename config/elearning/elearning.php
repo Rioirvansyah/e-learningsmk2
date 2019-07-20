@@ -79,6 +79,13 @@ class elearning extends Database
 			return "Success";
 		}
 	}
+
+	public function get_guru($id){
+		$con = $this->dbconnect();	
+		$sql = "SELECT * FROM t_staf where nip='$id'" or die(mysqli_error());
+		$query = mysqli_query($con,$sql);
+		return $query->fetch_assoc();
+	}
 }
 
 class Kelas extends Database{

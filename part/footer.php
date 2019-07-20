@@ -13,7 +13,14 @@
     <script src="<?php echo $siteurl; ?>/assets/js/lib/data-table/buttons.html5.min.js"></script>
     <script src="<?php echo $siteurl; ?>/assets/js/lib/data-table/buttons.print.min.js"></script>
     <script src="<?php echo $siteurl; ?>/assets/js/lib/data-table/buttons.colVis.min.js"></script>
-  
+
+    <script src="<?php echo $siteurl; ?>/assets/datatable/jquery-3.3.1.js" type="text/javascript"></script>
+    <script type="text/javascript" src="<?php echo $siteurl; ?>/assets/datatable/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+    </script>
 
 
 </body>

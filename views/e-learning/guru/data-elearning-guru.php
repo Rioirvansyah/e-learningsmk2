@@ -33,7 +33,7 @@ $show = $obj->show_elearning_guru2();
                           </button> </a>
                         </div>
                         <div class="card-body">
-                              <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                              <table id="example" class="table table-striped table-bordered">
                                 <thead>
                                   <tr>
                                     <th>ID</th>
@@ -42,32 +42,34 @@ $show = $obj->show_elearning_guru2();
                                     <th>Mata Pelajaran</th>
                                     <th>File</th>
                                     <th>Tanggal Upload</th>
-
-                                    <th width="28%">Aksi</th>
+                                    <th width="20%">Aksi</th>
                                   </tr>
                                 </thead>
                                 <tbody>
                                <?php 
                                     $no = 1;
+                                     
                                     if(is_array($show) | (is_object($show))){
                                     foreach ($show as $data) {
+                                        if ($data['nip'] == $_SESSION['nip']){
                            ?>
-                                            <th><?php echo $data['id_elearning']; ?></th>   
-                                            <th><?php echo $data["judul"]; ?></th>
-                                            <th><?php echo $data["kelas"]; ?></th>
-                                            <th><?php echo $data["pelajaran"]; ?></th>
-                                            <th><?php echo $data["nama_file"]; ?></th>
-                                            <th><?php echo $data["tanggal_upload"]; ?></th>
-                                            <th>
+                                        <tr>
+                                            <td><?php echo $data['id_elearning']; ?></td>   
+                                            <td><?php echo $data["judul"]; ?></td>
+                                            <td><?php echo $data["kelas"]; ?></td>
+                                            <td><?php echo $data["pelajaran"]; ?></td>
+                                            <td><?php echo $data["nama_file"]; ?></td>
+                                            <td><?php echo $data["tanggal_upload"]; ?></td>
+                                            <td>
                                             <a href="../siswa/detail-elearning.php?id_elearning=<?php echo $data["id_elearning"]; ?>"><button type="" class="btn btn-success btn-sm"><i class="fa fa-info"></i> Detail</button></a>
-                                            <?php if ($data['nip'] == $_SESSION['nip']){ ?>
+                                            
                                             <a href="edit-elearning.php?id_elearning=<?php echo $data["id_elearning"]; ?>"><button type="" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i> Edit</button></a>
                                             <a href='proses_tambah.php?id_elearning=<?php echo $data["id_elearning"]; ?>&aksi=hapus' onclick="return confirm(\'Yakin?\')"><button type="" class="btn btn-danger btn-sm"><i class="fa fa-trash "></i> Delete</button></a>
-                                            <?php } ?>
+                                            </td>
                                         </tr>
                                         <?php
                                         $no++;  
-                                }}
+                                }}}
                                 ?>
                                  
                               </tbody>

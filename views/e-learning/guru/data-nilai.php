@@ -6,7 +6,7 @@ $siteurl = 'http://localhost:8080/SISSMKN2';
 $obj = new elearning2();
 $obj_kelas = new Kelas();
 $obj_mapel = new Mata_pelajaran();
-$showkelas = $obj_kelas->show_kelas();
+$showkelas = $obj_kelas->show_kelas_ujian($_SESSION['nip']);
 $showmapel = $obj_mapel->show_mapel();
 $showmapelbyuser = $obj->get_mapel($_SESSION['nip']);
 ?>
@@ -73,7 +73,7 @@ $showmapelbyuser = $obj->get_mapel($_SESSION['nip']);
                     while ($data = mysqli_fetch_array($show)) {
                      	?>
                             <div class="card-body">
-                              <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                              <table id="example" class="table table-striped table-bordered">
                                 <thead>
                                   <tr>
                                     <th>No</th>
@@ -90,12 +90,13 @@ $showmapelbyuser = $obj->get_mapel($_SESSION['nip']);
                                     if(is_array($show) | (is_object($show))){
                                     foreach ($show as $data) {
                                 ?>
-                                            <th><?php echo $no ?></th>   
-                                            <th><?php echo $data["nama"]; ?></th>
-                                            <th><?php echo $data["kelas"]; ?></th>
-                                            <th><?php echo $data["pelajaran"]; ?></th>
-                                            <th><?php echo $data["nilai_pg"]; ?></th>
-                                            <th><?php echo $data["nilai_isi"]; ?></th>
+                                        <tr>
+                                            <td><?php echo $no ?></td>   
+                                            <td><?php echo $data["nama"]; ?></td>
+                                            <td><?php echo $data["kelas"]; ?></td>
+                                            <td><?php echo $data["pelajaran"]; ?></td>
+                                            <td><?php echo $data["nilai_pg"]; ?></td>
+                                            <td><?php echo $data["nilai_isi"]; ?></td>
                                         </tr>
                                         <?php
                                         $no++;  

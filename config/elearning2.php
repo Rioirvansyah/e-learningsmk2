@@ -129,6 +129,15 @@ class Kelas extends Database{
 		$query = mysqli_query($con,$sql);
 		return $query;
 	}
+
+	public function show_kelas_ujian($id){
+		$con = $this->dbconnect();
+		$sql = "SELECT DISTINCT uo.id_kelas,kelas,nip FROM nilai_ujian as nu JOIN ujian_online as uo on nu.id_ujian_online = uo.id_ujian_online join t_kelas as tk on uo.id_kelas = tk.id_kelas where nip='$id'";
+		$query = mysqli_query($con,$sql);
+		return $query;
+	}
+
+
 }
 
 class Mata_pelajaran extends Database{

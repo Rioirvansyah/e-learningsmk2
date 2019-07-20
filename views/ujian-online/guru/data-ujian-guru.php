@@ -36,7 +36,7 @@ $show = $obj->show_ujian();
                           </button> </a>
                         </div>
                         <div class="card-body">
-                              <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                              <table id="example" class="table table-striped table-bordered">
                                 <thead>
                                   <tr>
                                     <th>No.</th>
@@ -48,7 +48,7 @@ $show = $obj->show_ujian();
                                     <th>Tanggal Ujian</th>
                                     <th>Tanggal Upload</th>
                                     <th>Status Ujian</th>
-                                    <th width="26%"></th>
+                                    <th width="20%">Aksi</th>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -56,6 +56,7 @@ $show = $obj->show_ujian();
                                     $no = 1;
                                     if(is_array($show) | (is_object($show))){
                                     foreach ($show as $data) {
+                                      if ($data['nip'] == $_SESSION['nip']){
                                     $date = date('l', strtotime($data['tgl_ujian'])); 
                                     $daylist = array('Sunday' => 'Minggu',
                                                      'Friday' => 'Jumat',
@@ -66,17 +67,18 @@ $show = $obj->show_ujian();
                                                      'Wednesday' => 'Rabu',
                                                     );
                                 ?>
-                                            <th><?php echo $no; ?></th>   
-                                            <th><?php echo $data["kelas"]; ?></th>
-                                            <th><?php echo $data["pelajaran"]; ?></th>
-                                            <th><?php echo $data["jenis_ujian"]; ?></th>
-                                            <th><?php echo $daylist[$date]; ?></th>
-                                            <th><?php echo $data["jam_mulai"]; ?> - <?php echo $data["jam_selesai"]; ?></th>
-                                            <th><?php echo $data["tgl_ujian"]; ?></th>
-                                            <th><?php echo $data["tgl_upload"]; ?></th>
-                                            <th><?php echo $data["status_ujian"]; ?></th>
-                                            <th>
-                                            <?php if ($data['nip'] == $_SESSION['nip']){ ?>
+                                        <tr>
+                                            <td><?php echo $no; ?></td>   
+                                            <td><?php echo $data["kelas"]; ?></td>
+                                            <td><?php echo $data["pelajaran"]; ?></td>
+                                            <td><?php echo $data["jenis_ujian"]; ?></td>
+                                            <td><?php echo $daylist[$date]; ?></td>
+                                            <td><?php echo $data["jam_mulai"]; ?> - <?php echo $data["jam_selesai"]; ?></td>
+                                            <td><?php echo $data["tgl_ujian"]; ?></td>
+                                            <td><?php echo $data["tgl_upload"]; ?></td>
+                                            <td><?php echo $data["status_ujian"]; ?></td>
+                                            <td>
+                                            
                                             <a href="detail-ujian-online.php?id_ujian_online=<?php echo $data["id_ujian_online"]; ?>"><button type="" class="btn btn-success btn-sm"><i class="fa fa-info"></i> Detail</button></a>
                                             <a href="edit-ujian-online.php?id_ujian_online=<?php echo $data["id_ujian_online"]; ?>"><button type="" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i> Edit</button></a>
                                             <?php 
@@ -86,13 +88,13 @@ $show = $obj->show_ujian();
                                                 <a href="proses_tambah-ujian.php?id_ujian_online=<?php echo $data["id_ujian_online"]; ?>&aksi=aktif"><button type="" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i> Aktif</button></a>
                                              <?php }
                                             ?>
-                                            <a href="proses_tambah-ujian.php?id_ujian_online=<?php echo $data["id_ujian_online"]; ?>&aksi=hapus" onclick="return confirm(\'Yakin?\')"><button type="" class="btn btn-danger btn-sm"><i class="fa fa-trash "></i> Delete</button></a></th>
-                                            <?php } ?>
+                                            <a href="proses_tambah-ujian.php?id_ujian_online=<?php echo $data["id_ujian_online"]; ?>&aksi=hapus" onclick="return confirm(\'Yakin?\')"><button type="" class="btn btn-danger btn-sm"><i class="fa fa-trash "></i> Delete</button></a></td>
+                                            
                                         </tr>
                                         <?php
                                         $no++;  
                                      
-                                }}
+                                }}}
                                 ?>
                                 
                               </tbody>

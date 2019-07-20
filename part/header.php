@@ -26,11 +26,11 @@ if($_SESSION['status'] != "login"){
     <link rel="stylesheet" href="<?php echo $siteurl; ?>/assets/css/themify-icons.css">
     <link rel="stylesheet" href="<?php echo $siteurl; ?>/assets/css/flag-icon.min.css">
     <link rel="stylesheet" href="<?php echo $siteurl; ?>/assets/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="<?php echo $siteurl; ?>/assets/css/lib/datatable/dataTables.bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="<?php echo $siteurl; ?>/assets/css/lib/datatable/dataTables.bootstrap.min.css"> -->
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
     <link rel="stylesheet" href="<?php echo $siteurl; ?>/assets/scss/style.css">
     <link rel="stylesheet" href="<?php echo $siteurl; ?>/assets/css/lib/chosen/chosen.min.css">
-
+    <link rel="stylesheet" type="text/css" href="<?php echo $siteurl; ?>/assets/datatable/jquery.dataTables.min.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     
