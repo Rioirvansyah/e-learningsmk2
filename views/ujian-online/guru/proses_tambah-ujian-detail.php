@@ -34,8 +34,14 @@ require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/config/ujian-online/ujian-online-d
         $jawaban_benar = "";
       }
       
+      if ($gambar != "") {
+        move_uploaded_file($file_tmp,'./../../../file/'.$gambar);
+        $add = $obj->add_ujian_detail($id_ujian_online_detail, $id_ujian_online,$no_soal, $soal, $jenis_soal, $gambar, $jawaban_a, $jawaban_b, $jawaban_c, $jawaban_d, $jawaban_e, $jawaban_benar, $poin_nilai);
+      }
+      if ($gambar == "") {
+        $add = $obj->add_ujian_detail($id_ujian_online_detail, $id_ujian_online,$no_soal, $soal, $jenis_soal, $gambar, $jawaban_a, $jawaban_b, $jawaban_c, $jawaban_d, $jawaban_e, $jawaban_benar, $poin_nilai);
+      }
 
-      $add = $obj->add_ujian_detail($id_ujian_online_detail, $id_ujian_online,$no_soal, $soal, $jenis_soal, $gambar, $jawaban_a, $jawaban_b, $jawaban_c, $jawaban_d, $jawaban_e, $jawaban_benar, $poin_nilai);
 
       if ($add == "Success") {
         header('Location: http://localhost:8080/SISSMKN2/views/ujian-online/guru/detail-ujian-online.php?id_ujian_online='.$id_ujian_online.'');

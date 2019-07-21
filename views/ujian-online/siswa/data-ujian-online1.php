@@ -60,7 +60,7 @@ $siteurl = 'http://localhost:8080/SISSMKN2';
                         <div class="row form-group">
                                 <div style="margin-left: 15px"><?= $no; ?>. </div> 
                             <?php if($v['gambar']){ ?>
-                                <div class="col-12 col-md-11"><?php echo $v['gambar']; ?></div>
+                                <div class="col-12 col-md-11"><img src="<?php echo "./../../../file/".$v['gambar']; ?>" width=150></div>
                                 <div class="col col-md-1"></div> 
                             <?php } ?>
                                 <div class="col-12 col-md-10" align="float-left"><?php echo $v['soal']; ?></div>
@@ -118,7 +118,7 @@ $siteurl = 'http://localhost:8080/SISSMKN2';
                         <div class="row form-group">
                                 <div class="col col-md-1"><?= $no; ?>. </div> 
                             <?php if($v['gambar']){ ?>
-                                <div class="col-12 col-md-11"><?php echo $v['gambar']; ?></div>
+                                <div class="col-12 col-md-11"><img src="<?php echo "./../../../file/".$v['gambar']; ?>" width=150></div>
                                 <div class="col col-md-1"></div> 
                             <?php } ?>
                                 <div class="col-12 col-md-10" align="float-left"><?php echo $v['soal']; ?></div>
