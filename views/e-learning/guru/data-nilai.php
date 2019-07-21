@@ -82,6 +82,7 @@ $showmapelbyuser = $obj->get_mapel($_SESSION['nip']);
                                     <th>Mata Pelajaran</th>
                                     <th>Nilai Pilihan Ganda</th>
                                     <th>Nilai Isian</th>
+                                    <th>Nilai Total</th>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -97,6 +98,7 @@ $showmapelbyuser = $obj->get_mapel($_SESSION['nip']);
                                             <td><?php echo $data["pelajaran"]; ?></td>
                                             <td><?php echo $data["nilai_pg"]; ?></td>
                                             <td><?php echo $data["nilai_isi"]; ?></td>
+                                            <td><?php echo $data["nilai_total"]; ?></td>
                                         </tr>
                                         <?php
                                         $no++;  

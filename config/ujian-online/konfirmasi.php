@@ -19,8 +19,15 @@ $konek = mysqli_connect("localhost","root","","webtempfix");
     }else if($_POST["aksi"]=="simpannilai"){
         $jawaban = $_POST["nilai"];
         $id_ujian = $_POST["idujian"];
+        $jmlessay = $_POST["jmlessay"];
+        if($jmlessay == 0){
+            $nilaitotal = $jawaban;
+        }else{
+            
+            $nilaitotal = "kosong";
+        }
         // echo "induk ".$no_induk." nilai ".$jawaban." idujian".$id_ujian;
-        $query = "insert into nilai_ujian set id_ujian_online = '".$id_ujian."',no_induk = '".$no_induk."', nilai_pg = '".$jawaban."'";
+        $query = "insert into nilai_ujian set id_ujian_online = '".$id_ujian."',nilai_total = '".$nilaitotal."',no_induk = '".$no_induk."', nilai_pg = '".$jawaban."'";
         $q = mysqli_query($konek,$query);
             if(!$q){
                 echo mysqli_error($konek);

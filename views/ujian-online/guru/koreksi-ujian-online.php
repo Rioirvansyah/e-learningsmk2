@@ -48,6 +48,7 @@ $show2 = $obj->show_siswa_mengerjakan($id_ujian_online);
               <?php if(isset($_GET["no_induk"])){
                 $noinduk=$_GET["no_induk"];
                 $obj = new Ujian_online();
+                $cekPilihan = $obj->cekPilihan($id_ujian_online);
                 $jawabansiswa = $obj->getJawabanSiswa($id_ujian_online,$noinduk);
                 ?>
                 <div class="col-lg-12"> 
@@ -114,10 +115,17 @@ $show2 = $obj->show_siswa_mengerjakan($id_ujian_online);
       hitung=()=>{
         var nilaipg = $("#nilai_pg").val();
         var nilaiisi = $("#nilai_isian").val();
+        var jumlah = 0;
         if(nilaiisi>100){
           $("#nilai_isian").val(0);
         }else{
-        var jumlah = (Number(nilaipg)+Number(nilaiisi))/2;
+        var jmlpilihanganda = "<?php echo  $cekPilihan; ?>";
+        if(jmlpilihanganda>0){
+          jumlah = (Number(nilaipg)+Number(nilaiisi))/2;
+        }else{
+          jumlah = Number(nilaiisi);
+        }
+        
         $("#nilai_total").val(jumlah);
         }
       }

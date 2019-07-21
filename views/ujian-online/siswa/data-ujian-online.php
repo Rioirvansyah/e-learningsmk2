@@ -67,6 +67,19 @@ if(isset($_SESSION["ujian"])){ ?>
                                     <td>Jam</td>
                                     <td>: <?php echo $data['jam_mulai']; ?> - <?php echo $data['jam_selesai']; ?></td>
                                 </tr>
+                                <?php 
+                                $nilaitot = $obj->getNilai2($data["id_ujian_online"],$_SESSION['no_induk']);  ?>
+                                 <tr>
+                                    <td>Nilai Total Anda</td>
+                                    <td>: <?php if ($nilaitot == "kosong")  { ?>
+                                        Sedang Dikoreksi, Cek Secara Berkala
+                                        <?php } else if ($nilaitot == NULL) {
+                                        echo "Kerjakan Soal Terlebih Dahulu";
+                                        } else{ 
+                                        echo $nilaitot;
+                                        } ?>                                       
+                                    </td>
+                                </tr>
                             </table>
                         </div>
                      </div>

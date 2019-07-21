@@ -48,7 +48,7 @@ $show = $obj->show_ujian();
                                     <th>Tanggal Ujian</th>
                                     <th>Tanggal Upload</th>
                                     <th>Status Ujian</th>
-                                    <th width="20%">Aksi</th>
+                                    <th width="24%">Aksi</th>
                                   </tr>
                                 </thead>
                                 <tbody>

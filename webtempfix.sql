@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2019 at 04:52 PM
+-- Generation Time: Jul 20, 2019 at 05:32 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -70,7 +70,15 @@ CREATE TABLE `jawaban_siswa` (
 INSERT INTO `jawaban_siswa` (`id_jawaban_siswa`, `id_ujian_online`, `no_induk`, `id_ujian_online_detail`, `jawaban`) VALUES
 (22, 'UO-00002', '0013223952', '6', 'iya dong'),
 (21, 'UO-00002', '0013223952', '8', 'embohhh'),
-(23, 'UO-00004', '0010881115', '11', 'awwwaaa');
+(23, 'UO-00004', '0010881115', '11', 'awwwaaa'),
+(24, 'UO-00004', '0010881115', '11', 'qq'),
+(25, 'UO-00001', '0010881115', '3', 'tes'),
+(26, 'UO-00001', '0010881115', '2', 'awa'),
+(27, 'UO-00005', '0010881115', '15', 'hai'),
+(28, 'UO-00007', '0013223952', '20', 'gg'),
+(29, 'UO-00006', '0013223952', '18', 'jjj'),
+(30, 'UO-00008', '0010881115', '21', 'tes'),
+(31, 'UO-00008', '0010881115', '22', 'ass');
 
 -- --------------------------------------------------------
 
@@ -94,7 +102,12 @@ CREATE TABLE `nilai_ujian` (
 
 INSERT INTO `nilai_ujian` (`id_nilai_ujian`, `id_ujian_online`, `no_induk`, `nilai_total`, `nilai_pg`, `nilai_isi`, `status_nilai`) VALUES
 (8, 'UO-00002', '0013223952', '90', 100, 80, 'sudah'),
-(13, 'UO-00004', '0010881115', NULL, 0, NULL, NULL);
+(14, 'UO-00004', '0010881115', '50', 0, 100, 'sudah'),
+(15, 'UO-00001', '0010881115', 'kosong', 0, NULL, NULL),
+(16, 'UO-00005', '0010881115', '83.5', 67, 100, 'sudah'),
+(20, 'UO-00007', '0013223952', '50', 0, 100, 'sudah'),
+(22, 'UO-00006', '0013223952', '50', 50, NULL, NULL),
+(23, 'UO-00008', '0010881115', '100', 0, 100, 'sudah');
 
 -- --------------------------------------------------------
 
@@ -863,9 +876,13 @@ CREATE TABLE `ujian_online` (
 
 INSERT INTO `ujian_online` (`id_ujian_online`, `id_kelas`, `idpel`, `nip`, `jam_mulai`, `jam_selesai`, `jenis_ujian`, `bab`, `tgl_ujian`, `waktu`, `tgl_upload`, `status_ujian`) VALUES
 ('UO-00002', 1, 165002, '1', '10:00:00', '22:00:00', 'Tugas', 'bab 1', '2019-07-09', '2', '2019-07-09 14:53:12', 'tidak'),
-('UO-00001', 1, 165001, '2', '07:00:00', '19:00:00', 'Ujian Tengah Semester', '', '2019-07-09', '1', '2019-07-09 15:30:11', 'tidak'),
+('UO-00001', 1, 165001, '2', '07:00:00', '19:00:00', 'Ujian Tengah Semester', '', '2019-07-20', '1', '2019-07-20 05:32:42', 'tidak'),
 ('UO-00003', 1, 165005, '2', '20:29:00', '23:59:00', 'Ulangan', '', '2019-07-15', '2', '2019-07-15 15:30:08', 'tidak'),
-('UO-00004', 1, 165004, '2', '19:30:00', '23:59:00', 'Ujian Tengah Semester', '', '2019-07-16', '2', '2019-07-16 14:46:41', 'tidak');
+('UO-00004', 2, 165004, '2', '19:30:00', '23:59:00', 'Ujian Tengah Semester', '', '2019-07-17', '2', '2019-07-17 15:06:14', 'tidak'),
+('UO-00005', 1, 165002, '2', '21:00:00', '22:00:00', 'Tugas', '1', '2019-07-20', '90', '2019-07-20 15:30:04', 'tidak'),
+('UO-00006', 2, 165002, '2', '19:00:00', '23:59:00', 'Ujian Tengah Semester', '', '2019-07-20', '2', '2019-07-20 15:48:24', 'aktif'),
+('UO-00007', 2, 165005, '2', '19:00:00', '23:59:00', 'Ulangan', '', '2019-07-20', '2', '2019-07-20 16:10:14', 'aktif'),
+('UO-00008', 1, 165002, '2', '21:07:00', '23:00:00', 'Tugas', '1', '2019-07-20', '120', '2019-07-20 16:39:11', 'aktif');
 
 -- --------------------------------------------------------
 
@@ -903,7 +920,17 @@ INSERT INTO `ujian_online_detail` (`id_ujian_online_detail`, `id_ujian_online`, 
 (2, 'UO-00001', 2, 'apakah kamu sayang aku?', 'Essay', '', '', '', '', '', '', '', ''),
 (9, 'UO-00003', 1, 'What The?', 'Pilihan Ganda', '', 'a', 'b', 'c', 'd', 'Hell', 'E', ''),
 (10, 'UO-00004', 1, 'apa?', 'Pilihan Ganda', '', 'ab', 'ac', 'ad', 'ae', 'af', 'E', ''),
-(11, 'UO-00004', 2, 'aw?', 'Essay', '', '', '', '', '', '', '', '');
+(11, 'UO-00004', 2, 'aw?', 'Essay', '', '', '', '', '', '', '', ''),
+(12, 'UO-00005', 1, 'qwerty', 'Pilihan Ganda', '', 'qw', 'er', 'ty', 'ui', 'op', 'A', ''),
+(13, 'UO-00005', 2, 'qwertyu', 'Pilihan Ganda', '', 'as', 'df', 'gh', 'jk', 'lm', 'B', ''),
+(14, 'UO-00005', 3, 'qwertyu', 'Pilihan Ganda', '', 'zx', 'cv', 'bn', 'nm', 'po', 'C', ''),
+(15, 'UO-00005', 4, 'Haloooo', 'Essay', '', '', '', '', '', '', '', ''),
+(16, 'UO-00006', 1, 'Apa itu cinta?', 'Pilihan Ganda', '', 'A', 'B', 'C', 'D', 'Buta', 'E', ''),
+(17, 'UO-00006', 2, 'Apaa??', 'Pilihan Ganda', '', 'S', 'F', 'G', 'H', 'K', 'C', ''),
+(21, 'UO-00008', 1, 'qwerty', 'Essay', '', '', '', '', '', '', '', ''),
+(19, 'UO-00007', 1, 'a?', 'Pilihan Ganda', '', 'asd', 'asdsd', 'asdasd', 'sadds', 'gsa', 'E', ''),
+(20, 'UO-00007', 2, 'apa?', 'Essay', '', '', '', '', '', '', '', ''),
+(22, 'UO-00008', 2, 'asdffghjkk', 'Essay', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -1131,12 +1158,12 @@ ALTER TABLE `user_level`
 -- AUTO_INCREMENT for table `jawaban_siswa`
 --
 ALTER TABLE `jawaban_siswa`
-  MODIFY `id_jawaban_siswa` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_jawaban_siswa` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `nilai_ujian`
 --
 ALTER TABLE `nilai_ujian`
-  MODIFY `id_nilai_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_nilai_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `t_absensi`
 --
@@ -1206,7 +1233,7 @@ ALTER TABLE `t_wali`
 -- AUTO_INCREMENT for table `ujian_online_detail`
 --
 ALTER TABLE `ujian_online_detail`
-  MODIFY `id_ujian_online_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_ujian_online_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `user`
 --

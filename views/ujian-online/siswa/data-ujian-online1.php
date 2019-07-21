@@ -93,6 +93,7 @@ $siteurl = 'http://localhost:8080/SISSMKN2';
                </div>
 
 
+
                <div class="col-lg-12"> 
                 <div id="soalisi">
                 <?php
@@ -106,10 +107,8 @@ $siteurl = 'http://localhost:8080/SISSMKN2';
         while($data1=mysqli_fetch_array($tampil1)){
           $soalsoal1[]=$data1;
           
-        }
-        shuffle($soalsoal);
+        } shuffle($soalsoal);
        foreach($soalsoal1 as $v){
-        
           ?>
       
                     <div class="card">
@@ -141,7 +140,7 @@ $siteurl = 'http://localhost:8080/SISSMKN2';
                       </div>
 
               <?php $no++; } ?>
-
+                   <input type="hidden" name="jmlessay" id="jmlessay" value="<?= count($soalsoal1); ?>">
                   </div>
                   <button type="button" onclick="konfirmasi()" class="btn btn-danger btn-sm">konfirmasi</button>
                </div>
@@ -250,11 +249,12 @@ previsi=(e,id_soal)=>{
           
     })
     var nilai =  $("#skor").val();
+    var jmlessay = $("#jmlessay").val();
 
     await $.ajax({
         url: "http://localhost:8080/SISSMKN2/config/ujian-online/konfirmasi.php",
         type:"post",
-        data:{aksi:"simpannilai",nilai,idujian:"<?= $id_ujian_online; ?>"},
+        data:{aksi:"simpannilai",nilai,jmlessay,idujian:"<?= $id_ujian_online; ?>"},
         success:function(response){
           console.log(response);
         }

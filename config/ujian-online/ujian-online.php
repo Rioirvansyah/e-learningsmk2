@@ -43,13 +43,29 @@ class Ujian_online extends Database{
 		return $query;
 	}
 
+	// function show_ujian_tes($id){
+	// 	$con = $this->dbconnect();
+	// 	$sql = 'SELECT * FROM ujian_online as u JOIN nilai_ujian as nu u.id_kelas = k.id_kelas JOIN t_pelajaran as m ON u.idpel = m.idpel WHERE us.no_induk="$id"';
+	// 	$query = mysqli_query($con,$sql);
+	// 	return $query;
+	// }
+
 	function show_ujian_waktu2($id){
 		$con = $this->dbconnect();
 		$sql = "SELECT * FROM user as us JOIN t_siswa as ts ON us.no_induk = ts.no_induk JOIN t_kelas as k ON ts.id_kelas = k.id_kelas JOIN ujian_online as u on u.id_kelas = k.id_kelas JOIN t_pelajaran as m ON u.idpel = m.idpel WHERE date_format(tgl_ujian, '%Y-%m-%d')=CURDATE() and us.no_induk='$id'";
 
 		$query = mysqli_query($con,$sql);
-
+		// var_dump($query->fetch_assoc());
 		return $query;
+	}
+
+	function getNilai2($id_ujian,$induk){
+		$con = $this->dbconnect();
+		$sql = "SELECT nilai_total FROM nilai_ujian where id_ujian_online='$id_ujian' and no_induk='$induk'";
+
+		$query = mysqli_query($con,$sql);
+		// var_dump($query->fetch_assoc());
+		return $query->fetch_assoc()["nilai_total"];
 	}
 
 	function show_ujian_detail(){
@@ -162,6 +178,13 @@ class Ujian_online extends Database{
 		}else{
 			return $q;
 		}
+	}
+
+	function cekPilihan($id_ujian){
+		$con = $this->dbconnect();
+		$query = "select * from ujian_online_detail as n where n.id_ujian_online = '".$id_ujian."' and n.jenis_soal = 'Pilihan Ganda'";
+		$q = mysqli_query($con,$query);
+		return mysqli_num_rows($q);
 	}
 
 	function show_siswa_mengerjakan($id_ujian_online){
